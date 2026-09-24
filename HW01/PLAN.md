@@ -88,6 +88,33 @@ Các bảng dùng schema cố định:
 - [x] Ảnh không dùng đã xoá; toàn bộ ảnh đặt tên thống nhất `JP01.png`–`JP10.png`.
 - [ ] Điền ngày nộp thực tế vào report và kiểm lại cửa sổ 60 ngày.
 
+## Việc còn lại của R2 (theo dõi nội bộ, không đưa vào report)
+
+- [x] 20 defect (D01–D20) đã viết vào report mục 2.2–2.3, mọi dữ kiện đối chiếu với nguồn chính thức; 7 defect AI/LLM (D14–D20).
+- [ ] Sinh viên tự gửi prompt cho ChatGPT cho từng defect, ghi vào `prompt_log.md` với timestamp `HH:MM dd/mm/yyyy` và nguyên văn output.
+- [ ] So từng khẳng định của AI với bản ghi 2.3 + nguồn; chọn 1 lỗi thật (hallucination / bias / sai lệch không có nguồn) cho mỗi defect, điền bảng 2.4.
+- [ ] Nếu output của một defect không có lỗi: dùng prompt khác (hỏi sâu hơn: số liệu, timeline, CVSS, bản vá), không được bịa lỗi.
+- [ ] Chụp màn hình hội thoại (có thấy tài khoản) cho các lỗi tiêu biểu để làm bằng chứng.
+
+### Prompt gợi ý (sinh viên tự gửi, tự ghi log)
+
+```text
+Explain the software defect "<tên defect>" (<năm>). Include: root cause, exact date,
+affected versions or scope, severity (CVSS if any), number of affected users/devices,
+consequences, and the official fix. Cite your sources.
+```
+
+Các điểm dễ bắt lỗi AI (so với report): ngày công bố, số liệu (8,5 triệu máy, 362.758 xe, 700.000 hành khách, 92 triệu cuộc gọi, CAD 812,02, USD 5.000), điểm CVSS (NVD và vendor khác nhau ở D09, D19), phiên bản vá (D08, D09, D10, D12, D18), nguyên nhân gốc (D02 re-order term BGP, D04 xoá file khi đồng bộ DB, D13 redis-py asyncio), link/nguồn không tồn tại, và thiên lệch khi đổ lỗi (ví dụ đổ cho Microsoft ở D01, cho "tấn công mạng" ở D04).
+
+### Mẫu một entry trong `prompt_log.md`
+
+```text
+### R2-D01 – HH:MM dd/mm/yyyy – ChatGPT (<model>)
+Prompt: <nguyên văn>
+Output: <nguyên văn, không sửa>
+Error found: <trích câu sai> → Fact: <đúng theo nguồn> (<link>) – Type: hallucination/bias
+```
+
 ## Kiểm thử và tiêu chí chấp nhận
 
 - Đúng 10 jobs; tất cả thuộc cửa sổ 60 ngày; ≥3 jobs yêu cầu AI; đủ 10 ảnh có username.

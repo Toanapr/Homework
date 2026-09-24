@@ -356,7 +356,7 @@
 
 | ID | Prompt log entry (HH:MM dd/mm/yyyy) | AI claim (quoted) | Verified fact and source | Error type |
 |---|---|---|---|---|
-| D01 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| D01 | R2-B03, `[HH:MM] 24/09/2026` | Cites “CrowdStrike RCA” with the URL of `falcon-content-update-preliminary-post-incident-report`. | That URL is the Preliminary Post Incident Review (24/07/2024); the RCA was published separately on 06/08/2024 ([CrowdStrike](https://www.crowdstrike.com/en-us/blog/channel-file-291-rca-available/)). | Hallucination (misattributed source) |
 | D02 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D03 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D04 | R2-B01, `[HH:MM] 24/09/2026` | “The FAA issued a nationwide ground stop around 07:30 EST and lifted it around 09:00.” | The FAA's 7:15 a.m. EST statement already reported the pause of domestic departures, and its 8:50 a.m. EST statement said the ground stop had been lifted ([FAA](https://www.faa.gov/newsroom/faa-notam-statement)). | Hallucination (timeline) |
@@ -367,12 +367,12 @@
 | D09 | R2-B01, `[HH:MM] 24/09/2026` | The flaw “is commonly rated CVSS 3.1: 9.4 (Critical)”; the official fix was to upgrade to patched builds. | 9.4 is only the vendor score; NVD rates it 7.5 High ([NVD](https://nvd.nist.gov/vuln/detail/CVE-2023-4966)). NetScaler also required killing all active and persistent sessions after upgrading ([NetScaler](https://www.netscaler.com/blog/news/cve-2023-4966-critical-security-update-now-available-for-netscaler-adc-and-netscaler-gateway/)). | Bias (one-sided score) and incomplete fix |
 | D10 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D11 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D12 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| D12 | R2-B03, `[HH:MM] 24/09/2026` | Source: `https://www-dev.volexity.com/blog/2024/04/12/...`. | The host `www-dev.volexity.com` does not resolve in DNS (checked 24/09/2026); the article exists on `www.volexity.com`. | Hallucination (fabricated source) |
 | D13 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D14 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D15 | R2-B02, `[HH:MM] 24/09/2026` | The chatbot “told a passenger that he could obtain a bereavement-fare refund”; “awarding C$812.02 in damages and fees”. | The decision refers to Jake Moffatt only as “they”; C$812.02 = C$650.88 damages + C$36.14 interest + C$125 fees ([2024 BCCRT 149](https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do), paras. 42–44). | Bias (gender assumption) and inaccurate breakdown |
 | D16 | R2-B02, `[HH:MM] 24/09/2026` | Source: `blog.google/products/gemini/gemini-image-generation-people-update/`. | The URL returns HTTP 404; Google's explanation is at [gemini-image-generation-issue](https://blog.google/products/gemini/gemini-image-generation-issue/) (23/02/2024). | Hallucination (fabricated source) |
 | D17 | R2-B02, `[HH:MM] 24/09/2026` | “On 31 May 2024, Google said it had made more than a dozen technical improvements”, citing `.../generative-ai-google-search-may-2024/`. | Google's post “AI Overviews: About last week” is dated 30 May 2024 ([Google](https://blog.google/products/search/ai-overviews-update-may-2024/)); the cited URL is the I/O launch announcement. | Hallucination (date and source) |
-| D18 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| D18 | R2-B03, `[HH:MM] 24/09/2026` | The vulnerability “was fixed in 0.0.132”. | The fix is in LangChain 0.0.142 ([Snyk](https://security.snyk.io/vuln/SNYK-PYTHON-LANGCHAIN-5411357)); NVD lists affected versions up to 0.0.131 only. | Hallucination (wrong version) |
 | D19 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D20 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |

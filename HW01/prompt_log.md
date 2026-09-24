@@ -218,21 +218,84 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 
 **Output (verbatim):**
 
+```text
+1. **CrowdStrike Channel File 291:** Sensor **7.11**, released on **28 February 2024**, introduced the IPC Template Type. On **19 July 2024**, **two IPC Template Instances** were deployed through Channel File 291. [CrowdStrike RCA](https://www.crowdstrike.com/en-us/blog/falcon-content-update-preliminary-post-incident-report/?utm_source=chatgpt.com)
+
+2. **Cloudflare 21 June 2022:** Final recovery was delayed because engineers’ reverts interfered with one another, sometimes reverting previous reverts and causing the problem to reappear. The internal load balancer that stopped working was **Multimog**, a variation of Cloudflare’s Unimog load balancer. [Cloudflare postmortem](https://blog.cloudflare.com/cloudflare-outage-on-june-21-2022/?utm_source=chatgpt.com)
+
+3. **Rogers 8 July 2022:** Rogers took about **14 hours** to pinpoint the root cause because engineers initially lacked router error logs and had difficulty determining which configuration change caused the outage. The change that triggered the outage had been downgraded to **“Low” risk**, although the overall upgrade process had initially been assessed as High risk. [CRTC assessment](https://crtc.gc.ca/eng/publications/reports/xona2024.htm?utm_source=chatgpt.com)
+
+4. **Tesla recall 23V-085:** As of 14 February 2023, Tesla identified **18 warranty claims** potentially related to the recalled condition. Tesla explicitly said it **did not concur with NHTSA’s analysis**, but proceeded with a voluntary recall “out of an abundance of caution.” [NHTSA recall report](https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V085-3451.PDF?utm_source=chatgpt.com)
+
+5. **MOVEit CVE-2023-34362:** Exploitation began on **27 May 2023**, when the **CL0P (TA505)** group began exploiting the SQL-injection flaw. The web shell used in the campaign was **LEMURLOOT**, with a known instance named **`human2.aspx`**. [Canadian Centre for Cyber Security advisory](https://www.cyber.gc.ca/en/guidance/profile-ta505-cl0p-ransomware?utm_source=chatgpt.com)
+
+6. **OpenSSL CVE-2022-3602:** It was reported to OpenSSL by **Polar Bear on 17 October 2022**. The companion vulnerability fixed in the same OpenSSL 3.0.7 release was **CVE-2022-3786**, an X.509 email-address variable-length buffer overflow discovered by Viktor Dukhovni. [OpenSSL security advisory](https://mta.openssl.org/pipermail/openssl-announce/2022-November/000243.html?utm_source=chatgpt.com)
+
+7. **XZ Utils CVE-2024-3094:** The malicious maintainer operated under the name **Jia Tan** (GitHub identity **JiaT75**). Andres Freund noticed unusually high CPU usage during SSH logins and **Valgrind errors**, which led him to investigate and discover the backdoor. [XZ incident analysis](https://www.openeuler.org/en/blog/cve-3094.html?utm_source=chatgpt.com)
+
+8. **PAN-OS CVE-2024-3400:** **Volexity** first detected the exploitation on **10 April 2024** while investigating suspicious traffic from a customer’s firewall. Palo Alto Networks says Threat Prevention IDs **95187, 95189, and 95191** block the known exploitation patterns. [Volexity disclosure](https://www-dev.volexity.com/blog/2024/04/12/zero-day-exploitation-of-unauthenticated-remote-code-execution-vulnerability-in-globalprotect-cve-2024-3400/?utm_source=chatgpt.com)
+
+9. **ChatGPT 20 March 2023:** Payment information could have been visible between **1:00 a.m. and 10:00 a.m. Pacific Time**; OpenAI also says subscription-confirmation emails containing payment details could have been misaddressed during that same window. The bug was triggered by a server change at **1:00 a.m. PT** that caused a spike in **Redis request cancellations**, allowing a connection to return another user's data. [OpenAI incident report](https://openai.com/index/march-20-chatgpt-outage/?utm_source=chatgpt.com)
+
+10. **Mata v. Avianca:** The sanctions opinion was issued by **U.S. District Judge P. Kevin Castel**. Three of the fabricated cases were **Varghese v. China Southern Airlines**, **Shaboon v. EgyptAir**, and **Petersen v. Iran Air** (the court also identified fake *Martinez*, *Durden*, and *Miller* opinions). [Mata v. Avianca sanctions opinion](https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2022cv01461/575368/54/?utm_source=chatgpt.com)
+
+11. **LangChain CVE-2023-29374:** NVD references **GitHub issue #814** and **pull request #1119** (and also issue #1026); the vulnerability affected LangChain through **0.0.131** and was fixed in **0.0.132**. [CVE record and references](https://app.opencve.io/cve/CVE-2023-29374?utm_source=chatgpt.com)
+
+12. **EchoLeak CVE-2025-32711:** **Aim Security/Aim Labs** discovered it and reported it to Microsoft in **January 2025**. The attack bypassed Copilot’s **XPIA prompt-injection classifier, link-redaction/sanitization controls, and CSP restrictions**, using reference-style Markdown and a Microsoft Teams proxy to achieve zero-click data exfiltration. [EchoLeak technical analysis](https://arxiv.org/abs/2509.10540?utm_source=chatgpt.com)
+
+13. **Vanna.AI CVE-2024-5565:** It was discovered by **Natan Nehorai of JFrog Security Research**. Vanna asks the LLM to generate **Plotly** code for visualizing query results, and prompt injection could manipulate that generated Python code into arbitrary code execution. [JFrog security research](https://research.jfrog.com/vulnerabilities/vanna-prompt-injection-rce-jfsa-2024-001034449/?utm_source=chatgpt.com)
+
+```
+
+**Verification:**
+
+- D01: **INVALID – misattributed source.** Claim: the answer cites "[CrowdStrike RCA](https://www.crowdstrike.com/en-us/blog/falcon-content-update-preliminary-post-incident-report/)". Fact: that URL is the *Preliminary Post Incident Review* of 24/07/2024; the Root Cause Analysis is a separate document published on 06/08/2024 ([CrowdStrike](https://www.crowdstrike.com/en-us/blog/channel-file-291-rca-available/)). The facts themselves (sensor 7.11 on 28/02/2024, two IPC Template Instances on 19/07/2024) are correct.
+- D02: VALID – conflicting reverts and Multimog match the Cloudflare blog.
+- D03: VALID – about 14 hours to pinpoint the root cause and the "Low" risk downgrade match the CRTC assessment.
+- D07: VALID – 18 warranty claims and Tesla not concurring with NHTSA match the Part 573 report.
+- D08: VALID – 27/05/2023, CL0P/TA505, LEMURLOOT and `human2.aspx` match CISA AA23-158A.
+- D10: VALID – Polar Bear on 17/10/2022 and CVE-2022-3786 by Viktor Dukhovni match the OpenSSL advisory.
+- D11: VALID – Jia Tan (JiaT75) and high CPU usage during SSH logins with Valgrind errors match public disclosure reports.
+- D12: **INVALID – hallucinated source.** Claim: source "[Volexity disclosure](https://www-dev.volexity.com/blog/2024/04/12/...)". Fact: the host `www-dev.volexity.com` does not resolve in DNS (checked 24/09/2026), while the same path on `www.volexity.com` returns HTTP 200. The facts (Volexity, Threat IDs 95187, 95189, 95191) are correct per the [Palo Alto advisory](https://security.paloaltonetworks.com/CVE-2024-3400).
+- D13: VALID – 1:00–10:00 a.m. PT and the Redis request-cancellation spike match the OpenAI post-mortem.
+- D14: VALID – Judge P. Kevin Castel and the Varghese, Shaboon and Petersen cases match the court opinion.
+- D18: **INVALID – hallucination.** Claim: the vulnerability "was fixed in **0.0.132**". Fact: the fix is in LangChain **0.0.142** ([Snyk](https://security.snyk.io/vuln/SNYK-PYTHON-LANGCHAIN-5411357); [Safety DB](https://getsafety.com/vulnerabilities/SFTY-20230405-83237)); the NVD record lists affected versions only "up to (including) 0.0.131" and names no fixed version.
+- D19: VALID – Aim Security/Aim Labs, reported in January 2025, XPIA classifier, link redaction and CSP bypass match the EchoLeak case study.
+- D20: VALID – Natan Nehorai (JFrog) and Plotly match the JFrog advisory.
+
+### R2-B04 (follow-up for D02, D03, D07, D08, D10, D11, D13, D14, D19, D20) – `[HH:MM dd/mm/yyyy]` – ChatGPT (GPT-5.6 Luna)
+
+**Prompt:**
+
+```text
+Answer each question in 1–2 sentences with one source link. Format as a numbered list.
+
+1. Cloudflare 21 June 2022: what was the name of the BGP policy statement changed on the spines, and how many minutes passed between the start of the incident and the root cause being found?
+2. Rogers 8 July 2022: in which phase of the multi-phase IP core upgrade did the outage occur, and how many recommendations did the CRTC-commissioned assessment make specifically to Rogers?
+3. Tesla recall 23V-085: on what date did NHTSA first raise its concerns with Tesla, and on what date did Tesla decide to recall?
+4. MOVEit CVE-2023-34362: what is the number and publication date of the CISA/FBI joint advisory, and which HTTP header did the LEMURLOOT web shell use for authentication?
+5. OpenSSL CVE-2022-3602: on what date was the "critical" pre-announcement made, and what CVSS score does NVD assign?
+6. XZ Utils CVE-2024-3094: which version did CISA recommend downgrading to, and which Arch Linux package version fixed the issue?
+7. ChatGPT 20 March 2023: which Python concurrency library was involved in the redis-py bug, and which Redis deployment mode?
+8. Mata v. Avianca: what are the names of the two sanctioned attorneys and their law firm, and on what date was the sanctions hearing held?
+9. EchoLeak CVE-2025-32711: what CVSS score does NVD assign, and in which month did Microsoft deploy the server-side fix?
+10. Vanna.AI CVE-2024-5565: what is the JFrog advisory ID, and what is the Attack Complexity value in its CVSS vector?
+```
+
+**Output (verbatim):**
+
 >
 
 **Verification:**
 
-- D01:
 - D02:
 - D03:
 - D07:
 - D08:
 - D10:
 - D11:
-- D12:
 - D13:
 - D14:
-- D18:
 - D19:
 - D20:
 

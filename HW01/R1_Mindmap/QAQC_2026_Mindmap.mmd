@@ -1,0 +1,82 @@
+---
+config:
+  layout: tidy-tree
+  mindmap:
+    maxNodeWidth: 460
+---
+mindmap
+  root(("QA/QC 2026+"))
+    QA vs QC §1.2.2
+      QA: process-oriented, preventive; good process leads to good product; covers development and test processes; everyone's responsibility; uses test results as process feedback
+      QC: product-oriented, corrective; testing is a major form of QC, others are formal methods, simulation, prototyping; uses test results to fix defects
+    Static testing CTFL ch.3
+      What: examines work products without executing them; reviews - informal, walkthrough, technical review, inspection; static analysis by tools
+      Where it fits: a form of testing, therefore QC; shift-left from the first work products; used in test analysis to evaluate the test basis; finds defects directly while dynamic testing causes failures §3.1.3
+      Review process §3.2.2: planning, review initiation, individual review, communication and analysis, fixing and reporting
+    Branch 1: ISTQB CTFL v4.0 test process §1.4
+      Test planning
+        Tasks: define test objectives; select test approach within constraints
+        Work products: test plan, test schedule, risk register, entry and exit criteria
+      Test monitoring and control
+        Tasks: check progress against the plan; evaluate exit criteria; take control actions
+        Work products: test progress reports, documented control directives, risk information
+      Test analysis: what to test
+        Tasks: analyse test basis; identify testable features; define and prioritise test conditions with risks; evaluate test basis for defects and testability
+        Work products: prioritised test conditions e.g. acceptance criteria; defect reports on the test basis
+      Test design: how to test
+        Tasks: elaborate test conditions into test cases; identify coverage items; define test data requirements; design test environment and tools
+        Work products: prioritised test cases, test charters, coverage items, test data and test environment requirements
+      Test implementation
+        Tasks: create testware and test data; organise procedures into suites; write manual and automated scripts; arrange execution schedule; build and verify environment
+        Work products: test procedures, test suites, automated test scripts, test data, test execution schedule, stubs, drivers, simulators, service virtualisation
+      Test execution
+        Tasks: run tests per schedule; compare actual and expected results; log results; analyse anomalies and report defects
+        Work products: test logs, defect reports
+      Test completion
+        Tasks: change requests for unresolved defects; archive or hand over testware; shut down environment to agreed state; lessons learned; completion report
+        Work products: test completion report, improvement action items, lessons learned, change requests or backlog items
+      Cross-cutting: iterative or parallel and tailored to context §1.4.2; traceability §1.4.4; test management role and testing role §1.4.5
+    Branch 2: QA/QC job roles 2026
+      Manual tester
+        Responsibilities: analyse requirements; design test cases; exploratory and regression testing; log defects with severity and priority; retest
+        Skills: EP, BVA, decision table, state transition; domain knowledge; Jira, Postman, SQL basics; clear written English
+      Automation engineer / SDET
+        Responsibilities: build UI and API automation; integrate tests into CI/CD; triage flaky tests; performance scripts
+        Skills: Playwright, Selenium, Cypress; TypeScript, Java or Python; REST/GraphQL; Git, Jenkins, Docker; JMeter or k6
+      AI/LLM QA tester
+        Responsibilities: test chatbots, RAG and AI features; check accuracy, grounding, hallucination, consistency; test bias, safety, prompt injection; build evaluation datasets; check EU AI Act needs
+        Skills: prompt engineering; LLM evaluation metrics; Python and data testing; OWASP Top 10 for LLM applications
+      QA lead
+        Responsibilities: test strategy, plan, estimation; entry and exit criteria, release risk; lead testers; report metrics; govern GenAI use
+        Skills: test management, risk-based testing, leadership, stakeholder communication
+      Quality engineer
+        Responsibilities: quality across the whole SDLC; CI/CD quality gates; shift-left and shift-right; observability
+        Skills: automation and API testing; contract testing e.g. PACT; observability tools; SQL; AI-assisted testing
+      Process QA
+        Responsibilities: define and audit processes against standards; track non-conformities and corrective actions; process metrics and improvement
+        Skills: ISO 9001, CMMI, ISO/IEC/IEEE 29119; audit techniques; root cause analysis
+    Branch 3: AI impact per role
+      Manual tester
+        REPLACE: routine test case drafts, bug report formatting, test data variants
+        ASSIST: partitions and boundaries for review, ambiguity spotting, log analysis
+        CANNOT: exploratory testing, UX judgement, defect vs intended behaviour, real devices
+      Automation engineer / SDET
+        REPLACE: boilerplate scripts, locators, page objects, self-healing locators
+        ASSIST: flaky test debugging, CI failure triage, refactoring
+        CANNOT: framework architecture, what to automate, reviewing AI assertions
+      AI/LLM QA tester
+        REPLACE: large prompt-variant datasets, first-pass LLM-as-judge scoring
+        ASSIST: red-teaming prompts, clustering failures, computing metrics
+        CANNOT: ground truth and thresholds, harm and bias judgement, regulatory accountability
+      QA lead
+        REPLACE: status dashboards and report drafts
+        ASSIST: estimation, risk brainstorming, test plan drafts
+        CANNOT: go/no-go decision, people management, stakeholder negotiation
+      Quality engineer
+        REPLACE: routine quality-gate checks
+        ASSIST: telemetry anomaly detection, test impact analysis
+        CANNOT: quality strategy, risk appetite, business impact
+      Process QA
+        REPLACE: collecting process metrics, template compliance checks
+        ASSIST: audit evidence review, RCA drafts
+        CANNOT: audit interviews, judging real adoption, compliance sign-off

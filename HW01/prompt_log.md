@@ -284,20 +284,53 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 
 **Output (verbatim):**
 
->
+```text
+1. **Cloudflare 21 June 2022:** The BGP policy statement changed on the spines was **`AGGREGATES-OUT`**; the incident began at **06:27 UTC** and the root cause was identified at **06:58 UTC**, a gap of **31 minutes**. ([Cloudflare Blog][1])
+
+2. **Rogers 8 July 2022:** The outage occurred during **Phase 6 of a seven-phase IP-core upgrade**. The CRTC-commissioned Xona assessment made **7 recommendations specifically to Rogers**. ([CRTC][2])
+
+3. **Tesla recall 23V-085:** NHTSA first raised its concerns with Tesla on **25 January 2023**, and Tesla decided to conduct the voluntary recall on **7 February 2023**. ([OEMDTC][3])
+
+4. **MOVEit CVE-2023-34362:** The CISA/FBI joint advisory was **AA23-158A**, published **7 June 2023**. The LEMURLOOT web shell authenticated requests using the **`X-siLock-Comment`** HTTP header, whose value had to match its generated password. ([Cổng Thông Tin Chính Phủ][4])
+
+5. **OpenSSL CVE-2022-3602:** The “critical” pre-announcement was made on **25 October 2022** (with the final disclosure on 1 November); NVD currently assigns the vulnerability a **CVSS 3.1 score of 7.5 (High)**. ([NVD][5])
+
+6. **XZ Utils CVE-2024-3094:** CISA recommended **downgrading to XZ Utils 5.4.x** (commonly cited as 5.4.6), while Arch Linux fixed its package at **`xz 5.6.1-2`**. ([Linux Security][6])
+
+7. **ChatGPT 20 March 2023:** The affected Python library was **`redis-py`**, using **Asyncio**, and the bug occurred specifically with a **Redis Cluster** deployment. ([OpenAI][7])
+
+8. **Mata v. Avianca:** The two sanctioned attorneys were **Steven Schwartz and Peter LoDuca**, both of **Levidow, Levidow & Oberman, P.C.**; the sanctions hearing was held on **8 June 2023**. ([Scribd][8])
+
+9. **EchoLeak CVE-2025-32711:** NVD assigns it a **CVSS 3.1 score of 7.5 (High)**, although Microsoft’s CNA score is 9.3; Microsoft deployed the server-side fix in **May 2025**. ([OpenCVE][9])
+
+10. **Vanna.AI CVE-2024-5565:** The JFrog advisory is **JFSA-2024-001034449**; its original CVSS v3.1 vector gives **Attack Complexity = High (AC:H)**. ([research.jfrog.com][10])
+
+[1]: https://blog.cloudflare.com/cloudflare-outage-on-june-21-2022/?utm_source=chatgpt.com "Cloudflare outage on June 21, 2022 | Cloudflare Blog"
+[2]: https://web.crtc.gc.ca/eng/publications/reports/xona2024.htm?utm_source=chatgpt.com "Assessment of Rogers Networks for Resiliency and Reliability Following the 8 July 2022 Outage - Executive Summary | CRTC"
+[3]: https://tesla.oemdtc.com/447/sb-23-00-001-full-self-driving-software-may-cause-crash-2016-2023-tesla/?utm_source=chatgpt.com "SB-23-00-001 Full Self-Driving Software May Cause Crash - 2016-2023 Tesla"
+[4]: https://content.govdelivery.com/accounts/USDHSCISA/bulletins/35ecb08?utm_source=chatgpt.com "#StopRansomware: CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability"
+[5]: https://nvd.nist.gov/vuln/detail/cve-2022-3602?utm_source=chatgpt.com "NVD-CVE-2022-3602"
+[6]: https://linuxsecurity.com/advisories/archlinux/archlinux-202403-1-xz-arbitrary-code-execution-fdkberkecsmz?utm_source=chatgpt.com "Arch Linux: 202403-1 Critical xz Code Execution Advisory"
+[7]: https://openai.com/index/march-20-chatgpt-outage/?utm_source=chatgpt.com "March 20 ChatGPT outage: Here’s what happened | OpenAI"
+[8]: https://www.scribd.com/document/732836124/business-lawyer-winter-2024-issue?utm_source=chatgpt.com "Business Lawyer Winter 2024 Issue | PDF | Insider Trading | Sec Rule 10b 5"
+[9]: https://opencve.alliance.unm.edu/cve/CVE-2025-32711?utm_source=chatgpt.com "CVE-2025-32711 - Vulnerability Details - OpenCVE"
+[10]: https://research.jfrog.com/vulnerabilities/vanna-prompt-injection-rce-jfsa-2024-001034449/?utm_source=chatgpt.com "Vanna prompt injection RCE | JFSA-2024-001034449 - JFrog Security Research"
+```
 
 **Verification:**
 
-- D02:
-- D03:
-- D07:
-- D08:
-- D10:
-- D11:
-- D13:
-- D14:
-- D19:
-- D20:
+- D02: VALID – `AGGREGATES-OUT`, 06:27 → 06:58 UTC (31 minutes) match the Cloudflare blog.
+- D03: VALID – sixth phase of a seven-phase upgrade and seven recommendations to Rogers match the CRTC assessment.
+- D07: VALID – 25/01/2023 and 07/02/2023 match the NHTSA Part 573 chronology (the answer cites a third-party mirror instead of NHTSA).
+- D08: VALID – AA23-158A on 07/06/2023 and the `X-siLock-Comment` header match CISA.
+- D10: VALID – NVD CVSS 7.5 confirmed via the NVD API; pre-announcement on 25/10/2022.
+- D11: VALID – CISA named 5.4.6 explicitly (the answer hedges with "5.4.x, commonly cited as 5.4.6"); Arch `xz 5.6.1-2` matches.
+- D13: VALID – redis-py with Asyncio on Redis Cluster matches the OpenAI post-mortem.
+- D14: VALID – Steven Schwartz, Peter LoDuca, Levidow, Levidow & Oberman and the 08/06/2023 hearing match the court opinion. The cited source is a Scribd upload titled "Business Lawyer Winter 2024 Issue | Insider Trading", not the court record; its content could not be checked, so it is not counted as a confirmed error.
+- D19: VALID – NVD 7.5 and Microsoft CNA 9.3 confirmed via the NVD API; server-side fix in May 2025.
+- D20: VALID – JFSA-2024-001034449 and AC:H match the JFrog advisory and NVD.
+
+**Conclusion after R2-B01 to R2-B04:** confirmed AI errors were found for 10 of the 20 defects (D01, D04, D05, D06, D09, D12, D15, D16, D17, D18). For the other 10 defects, every checked claim across four prompts matched the sources.
 
 ## Cursor agent (research and report drafting)
 

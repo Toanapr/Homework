@@ -305,7 +305,7 @@
 #### D15 – Air Canada chatbot misrepresentation (Moffatt v. Air Canada)
 
 - **Source:** [Moffatt v. Air Canada, 2024 BCCRT 149](https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do)
-- **Description:** Air Canada's website chatbot told a customer that, after travelling, he could submit his ticket for a reduced bereavement rate within 90 days of the ticket issue date. The airline's bereavement policy page said the policy does not apply after travel has been completed, and an Air Canada representative later admitted the chatbot had used "misleading words".
+- **Description:** Air Canada's website chatbot told a customer that, after travelling, they could submit their ticket for a reduced bereavement rate within 90 days of the ticket issue date. The airline's bereavement policy page said the policy does not apply after travel has been completed, and an Air Canada representative later admitted the chatbot had used "misleading words".
 - **Severity:** Medium – financial harm to an individual customer, but it set a legal precedent.
 - **Consequences:** The tribunal found Air Canada liable for negligent misrepresentation, rejected the argument that the chatbot was responsible for its own actions, and ordered the airline to pay CAD 812.02 (damages, interest and fees).
 - **Solution:** The company is accountable for all information on its website, including chatbot answers. The chatbot must be grounded in and tested against the official policy pages.
@@ -359,20 +359,20 @@
 | D01 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D02 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D03 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D04 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D05 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D06 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| D04 | R2-B01, `[HH:MM] 24/09/2026` | “The FAA issued a nationwide ground stop around 07:30 EST and lifted it around 09:00.” | The FAA's 7:15 a.m. EST statement already reported the pause of domestic departures, and its 8:50 a.m. EST statement said the ground stop had been lifted ([FAA](https://www.faa.gov/newsroom/faa-notam-statement)). | Hallucination (timeline) |
+| D05 | R2-B01, `[HH:MM] 24/09/2026` | FPRSA-R is the “Flight Planning and Resiliency System for Airspace”. | FPRSA-R is the “Flight Plan Reception Suite Automated” sub-system ([NATS final report](https://www.caa.co.uk/publication/download/23340)). | Hallucination (invented acronym expansion) |
+| D06 | R2-B01, `[HH:MM] 24/09/2026` | “AT&T restored service by around noon.” | The outage began at 2:45 AM CST; AT&T announced restoration at 2:10 PM CST, and full restoration took over 12 hours ([FCC](https://docs.fcc.gov/public/attachments/DOC-404150A1.pdf)). | Hallucination (timeline) |
 | D07 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D08 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D09 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| D09 | R2-B01, `[HH:MM] 24/09/2026` | The flaw “is commonly rated CVSS 3.1: 9.4 (Critical)”; the official fix was to upgrade to patched builds. | 9.4 is only the vendor score; NVD rates it 7.5 High ([NVD](https://nvd.nist.gov/vuln/detail/CVE-2023-4966)). NetScaler also required killing all active and persistent sessions after upgrading ([NetScaler](https://www.netscaler.com/blog/news/cve-2023-4966-critical-security-update-now-available-for-netscaler-adc-and-netscaler-gateway/)). | Bias (one-sided score) and incomplete fix |
 | D10 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D11 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D12 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D13 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D14 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D15 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D16 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
-| D17 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
+| D15 | R2-B02, `[HH:MM] 24/09/2026` | The chatbot “told a passenger that he could obtain a bereavement-fare refund”; “awarding C$812.02 in damages and fees”. | The decision refers to Jake Moffatt only as “they”; C$812.02 = C$650.88 damages + C$36.14 interest + C$125 fees ([2024 BCCRT 149](https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do), paras. 42–44). | Bias (gender assumption) and inaccurate breakdown |
+| D16 | R2-B02, `[HH:MM] 24/09/2026` | Source: `blog.google/products/gemini/gemini-image-generation-people-update/`. | The URL returns HTTP 404; Google's explanation is at [gemini-image-generation-issue](https://blog.google/products/gemini/gemini-image-generation-issue/) (23/02/2024). | Hallucination (fabricated source) |
+| D17 | R2-B02, `[HH:MM] 24/09/2026` | “On 31 May 2024, Google said it had made more than a dozen technical improvements”, citing `.../generative-ai-google-search-may-2024/`. | Google's post “AI Overviews: About last week” is dated 30 May 2024 ([Google](https://blog.google/products/search/ai-overviews-update-may-2024/)); the cited URL is the I/O launch announcement. | Hallucination (date and source) |
 | D18 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D19 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |
 | D20 | `[ ]` | `[ ]` | `[ ]` | `[ ]` |

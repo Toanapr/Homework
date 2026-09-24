@@ -19,8 +19,8 @@ An application deadline is not a publication date.
 
 - **Submission date:** `[dd/mm/yyyy – fill in before submission]`
 - **Research snapshot:** 24/09/2026. For the planned 28/09/2026 submission, the 60-day window is 30/07/2026–28/09/2026; recalculate if the actual submission date changes.
-- **Number of postings:** 10 required. 8 are currently usable (JP03 confirmed still open on 24/09/2026); JP08 and JP09 return HTTP 404 (removed) on 24/09/2026 and must be replaced.
-- **Postings requiring AI/LLM/AI-assisted automation:** 3 (JP01, JP02, JP04), confirmed from the posting text on 24/09/2026. JP01 is no longer accepting applications and its “1 month ago” label cannot prove the 60-day window, so a fourth AI posting is recommended as a backup.
+- **Number of postings:** 10. JP08 and JP09 were replaced on 24/09/2026 because the original ANDPAD and GoTymeX listings returned HTTP 404; their screenshots still have to be captured. JP03 was confirmed still open on 24/09/2026.
+- **Postings requiring AI/LLM/AI-assisted automation:** 5 (JP01, JP02, JP04, JP08, JP09), confirmed from the posting text on 24/09/2026. The requirement of ≥ 3 is met even if JP01 (“1 month ago”, not accepting applications) is dropped.
 - **Screenshot folder:** `R1_Job_Postings/`
 
 The assignment requires 10 postings published within 60 days before submission.
@@ -38,8 +38,8 @@ posting-date label and the account name/display name visible in a corner.
 | JP05 | [Nhân Viên Kiểm Thử Phần Mềm (Tester)](https://www.topcv.vn/viec-lam/nhan-vien-kiem-thu-phan-mem-tester/2306333.html) | Công ty TNHH Phát triển Công nghệ Thái Sơn | TopCV | 18/09/2026 (`datePosted`); deadline 18/10/2026 | No | 9–11 million VND (pay period not stated) | `JP05.png` |
 | JP06 | [Software Tester](https://www.topcv.vn/viec-lam/software-tester/2308656.html) | Công ty Cổ phần Voyager | TopCV | 22/09/2026 (`datePosted`); deadline 22/10/2026 | No | Negotiable | `JP06.png` |
 | JP07 | [Manual Tester](https://www.topcv.vn/viec-lam/manual-tester/2307365.html) | CTCP Phần mềm SOFTMART | TopCV | 21/09/2026 (`datePosted`); deadline 21/10/2026 | No | 9–14 million VND | `JP07.png` |
-| JP08 | [Senior QA Engineer (Japanese N2+)](https://itviec.com/it-jobs/senior-qa-engineer-japanese-n2-andpad-vietnam-co-ltd-0112) | ANDPAD Vietnam | ITviec | **Replace** – screenshot shows “Expired”; link returns 404 | No | Not disclosed | `JP08.png` |
-| JP09 | [QA Automation Engineer](https://itviec.com/it-jobs/qa-automation-engineer-gotymex-1349) | GoTymeX | ITviec | **Replace** – screenshot shows “Expired”; link returns 404 | No | Not disclosed | `JP09.png` |
+| JP08 | [[Hanoi] Fullstack QA Engineer Lead (Manual, Auto, AI)](https://itviec.com/it-jobs/hanoi-fullstack-qa-engineer-lead-manual-auto-ai-money-forward-vietnam-co-ltd-4636) | Money Forward Vietnam | ITviec | 14/09/2026 (`datePosted`); live page shows “Posted 6 hours ago” (refreshed listing) | **Yes** – GenAI tools (Cursor, GitHub Copilot, LLM assistants), AI-augmented testing, testing AI features | Not disclosed (“You'll love it”) | `JP08_MoneyForward.png` (to capture) |
+| JP09 | [QA Engineer (Claude Code, Python, React, Manual Tester)](https://itviec.com/it-jobs/qa-engineer-claude-code-python-react-manual-tester-brarista-4435) | Brarista | ITviec | 07/09/2026 (`datePosted`); live page shows “Posted 17 days ago” | **Yes** – Claude Code for test matrices/regression suites, verifying AI-suggested tags | 800–1,000 USD/month (structured data; visible after sign-in) | `JP09_Brarista.png` (to capture) |
 | JP10 | [Software Quality Analyst (QA, Tester)](https://itviec.com/it-jobs/software-quality-analyst-qa-tester-mitek-vietnam-0714) | MiTek Vietnam | ITviec | 21/08/2026 (`datePosted`); screenshot shows “Posted 33 days ago”, live page “Posted 34 days ago” | No | Not disclosed; listing says competitive salary | `JP10.png` |
 
 ### 1.3 Detailed posting records
@@ -133,29 +133,29 @@ of AI Impact Analysis.
 - **Salary:** 9–14 million VND; the captured salary field does not state net/gross or a pay period.
 - **AI Impact Analysis:** AI can speed up checklist drafting and test-data ideas. The tester must validate outputs against the specification and confirm API/database behavior with real test evidence.
 
-#### JP08 – Senior QA Engineer (Japanese N2+), ANDPAD Vietnam — REPLACE
+#### JP08 – [Hanoi] Fullstack QA Engineer Lead (Manual, Auto, AI), Money Forward Vietnam
 
-- **Link:** [ITviec job posting](https://itviec.com/it-jobs/senior-qa-engineer-japanese-n2-andpad-vietnam-co-ltd-0112)
-- **Dated screenshot:** No posting date visible; the screenshot shows “Expired” and the link returns HTTP 404 on 24/09/2026. This posting cannot count toward the ten.
+- **Link:** [ITviec job posting](https://itviec.com/it-jobs/hanoi-fullstack-qa-engineer-lead-manual-auto-ai-money-forward-vietnam-co-ltd-4636)
+- **Dated screenshot:** The page's `datePosted` metadata is 14/09/2026 (valid through 19/10/2026); the live page on 24/09/2026 shows “Posted 6 hours ago”, which reflects a refreshed listing. **Screenshot not yet captured** – capture while logged in with “Posted …” and the account name visible.
 
-  ![JP08 – ANDPAD Vietnam screenshot](R1_Job_Postings/JP08.png)
+  ![JP08 – Money Forward Vietnam ITviec screenshot](R1_Job_Postings/JP08_MoneyForward.png)
 
-- **Job description:** `[Replace this posting]`
-- **Required skills:** `[Replace this posting]` (screenshot tags: QA QC, Scrum, Japanese, Tester, Agile, English)
-- **Salary:** `[Replace this posting]`
-- **AI Impact Analysis:** `[Write after replacement]`
+- **Job description:** Act as the quality lead for Money Forward's B2B SaaS products (Michibiku, Conkan), working with Japan-based PMs and engineers. Own release-risk decisions and entry/exit criteria, architect Playwright/TypeScript (or Python) web and API automation with CI/CD quality gates, govern outsourced QA teams, drive shift-left testing, and lead adoption of GenAI tools for test design, script generation and triage, including testing AI-assisted product features.
+- **Required skills:** Bachelor's in CS/SE; 8+ years of QA/SDET experience with 3+ years in a technical leadership role; fluent English; JavaScript/TypeScript or Python with Playwright, Cypress or Selenium; REST/GraphQL API testing and SQL validation; CI/CD and Dockerized test environments; daily practical use of GenAI tooling. Japanese and performance testing are nice to have.
+- **Salary:** Not disclosed (listing shows “You'll love it”).
+- **AI Impact Analysis:** AI tools are expected to speed up test design, script generation and triage, and the role also tests AI-assisted features. The lead still has to decide release risk, set safe AI-usage rules and judge whether AI output is correct.
 
-#### JP09 – QA Automation Engineer, GoTymeX — REPLACE
+#### JP09 – QA Engineer (Claude Code, Python, React, Manual Tester), Brarista
 
-- **Link:** [ITviec job posting](https://itviec.com/it-jobs/qa-automation-engineer-gotymex-1349)
-- **Dated screenshot:** No posting date visible; the screenshot shows “Expired” and the link returns HTTP 404 on 24/09/2026. This posting cannot count toward the ten.
+- **Link:** [ITviec job posting](https://itviec.com/it-jobs/qa-engineer-claude-code-python-react-manual-tester-brarista-4435)
+- **Dated screenshot:** The page's `datePosted` metadata is 07/09/2026 (valid through 12/10/2026); the live page on 24/09/2026 shows “Posted 17 days ago”. **Screenshot not yet captured** – capture while logged in with “Posted …” and the account name visible.
 
-  ![JP09 – GoTymeX screenshot](R1_Job_Postings/JP09.png)
+  ![JP09 – Brarista ITviec screenshot](R1_Job_Postings/JP09_Brarista.png)
 
-- **Job description:** `[Replace this posting]`
-- **Required skills:** `[Replace this posting]` (screenshot tags: Java, Postman, API, Automation Test, JavaScript, Python)
-- **Salary:** `[Replace this posting]`
-- **AI Impact Analysis:** `[Write after replacement]`
+- **Job description:** Test Brarista's AI fit-assistance products (sizing engine, chat assistant, client dashboard and storefront widgets). Use Claude Code to generate size-conversion test matrices and regression suites, verify AI-suggested catalogue tags, own release quality and the changelog, and reproduce and triage client-reported bugs. Remote; part-time or full-time.
+- **Required skills:** Strong attention to detail; proven, heavy use of Claude Code, including catching its wrong output; edge-case thinking; clear written English for bug reports and release notes. Nice to have: Intercom/Gleap, changelog writing, pytest/Playwright, e-commerce/Shopify.
+- **Salary:** 800–1,000 USD/month according to the page's structured data; the visible page requires sign-in to show salary, so confirm it in the logged-in screenshot.
+- **AI Impact Analysis:** Claude Code can generate the thousands of size combinations that cannot be checked by hand. The tester must still catch wrong AI output and wrong AI-assigned tags, because these errors reach real customers without any crash or alarm.
 
 #### JP10 – Software Quality Analyst (QA, Tester), MiTek Vietnam
 
@@ -171,7 +171,7 @@ of AI Impact Analysis.
 
 ### 1.4 R1 completion checklist
 
-- [ ] Replace JP08 and JP09 (removed listings) with two current postings; record link, dated screenshot, description, skills, salary and AI Impact Analysis.
+- [ ] Capture `JP08_MoneyForward.png` and `JP09_Brarista.png` while logged in to ITviec (show “Posted …”, salary field and account name). Do not submit the old `JP08.png` / `JP09.png` (expired ANDPAD / GoTymeX listings).
 - [ ] JP03: recapture on Indeed with the posting-age label visible, and add a screenshot of the DXC careers page showing the job (posted 08/09/2026).
 - [ ] JP01: decide whether to keep it (“1 month ago”, closed to applications) or replace it with another AI-requiring posting that has a clearly recent date.
 - [ ] JP05–JP07: add evidence that shows the posting date (the visible TopCV page shows only the deadline).

@@ -23,7 +23,7 @@ Nguồn yêu cầu: :codex-file-citation{path="/Users/toanhuynh/UNI/SOFTWARE TES
 
 Các bảng dùng schema cố định:
 
-- Job: ID, title, company, platform, posting date, collection date, URL, description, skills, salary/not disclosed, AI requirement, AI impact, screenshot reference.
+- Job (đúng theo đề, mỗi tin): link, dated screenshot, job description, required skills, salary/not disclosed, AI Impact Analysis 1–2 câu. Việc tin có yêu cầu AI hay không chỉ ghi ở bảng tóm tắt để đếm điều kiện ≥3 tin.
 - Defect: ID, product/system, publicized date, source, description, severity, consequences, solution, AI/LLM-related flag, AI claim, verified error/bias/hallucination, correction and verification source.
 - Test case: ID, objective, preconditions, input, steps, expected result, actual result, verdict, technique, edge-case flag, AI-missed evidence, execution/video/issue link.
 

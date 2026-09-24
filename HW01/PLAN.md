@@ -81,7 +81,8 @@ Các bảng dùng schema cố định:
 
 ## Việc còn lại của R1 (theo dõi nội bộ, không đưa vào report)
 
-- [ ] JP05–JP07: ảnh TopCV chỉ hiện hạn ứng tuyển; ngày đăng (18/09, 22/09, 21/09/2026) lấy từ `datePosted` trong mã trang. Cần thêm ảnh có hiện ngày đăng.
+- [x] JP05–JP07 đã thay bằng tin ITviec có nhãn “Posted …”: QIG (23/09/2026), FPT Digital (15/09/2026), Saritasa (16/09/2026).
+- [x] Đã chụp lại `JP05.png`, `JP06.png`, `JP07.png` trên ITviec (24/09/2026).
 - [x] JP01 đã thay bằng Floware – Senior Automation Test (AI, QA QC, API), `datePosted` 04/09/2026.
 - [x] Đã chụp `R1_Job_Postings/JP01.png` (Floware) khi đăng nhập ITviec.
 - [x] Ảnh không dùng đã xoá; toàn bộ ảnh đặt tên thống nhất `JP01.png`–`JP10.png`.

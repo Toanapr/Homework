@@ -7,7 +7,7 @@
 - **Submission date:** `[dd/mm/yyyy]`
 - **60-day window:** 30/07/2026–28/09/2026
 - **Number of postings:** 10
-- **Postings requiring AI/LLM/AI-assisted automation skills:** 5 (JP01, JP02, JP04, JP08, JP09)
+- **Postings requiring AI/LLM/AI-assisted automation skills:** 6 (JP01, JP02, JP04, JP06, JP08, JP09)
 - **Screenshot folder:** `R1_Job_Postings/`
 
 ### 1.2 Summary of collected postings
@@ -18,9 +18,9 @@
 | JP02 | [AI Quality Assurance Tester (Data Testing)](https://www.linkedin.com/jobs/view/4459648611/) | SCC Vietnam | LinkedIn | 3 weeks ago (as of 23/09/2026) | **Yes** – AI testing, conversational interfaces, Azure AI, EU AI Act | Not disclosed | `JP02.png` |
 | JP03 | [Quality Engineering](https://dxctechnology.wd1.myworkdayjobs.com/DXCJobs/job/VNM---HO-CHI-MINH-CITY/Quality-Engineering_51585699?src=JB-11100) | DXC Technology | DXC Careers (Workday) | 08/09/2026 | No | Not disclosed | `JP03.png` |
 | JP04 | [Senior QA Engineer (AI-Augmented Quality Engineering)](https://www.linkedin.com/jobs/view/senior-qa-engineer-ai-augmented-quality-engineering-4466589603) | Ins Enco | LinkedIn | 1 week ago (as of 23/09/2026) | **Yes** – GPT/Claude test generation, Mabl/Testim, Applitools/Percy, Postbot | 30–40 million VND gross/month | `JP04.png` |
-| JP05 | [Nhân Viên Kiểm Thử Phần Mềm (Tester)](https://www.topcv.vn/viec-lam/nhan-vien-kiem-thu-phan-mem-tester/2306333.html) | Công ty TNHH Phát triển Công nghệ Thái Sơn | TopCV | 18/09/2026 | No | 9–11 million VND | `JP05.png` |
-| JP06 | [Software Tester](https://www.topcv.vn/viec-lam/software-tester/2308656.html) | Công ty Cổ phần Voyager | TopCV | 22/09/2026 | No | Negotiable | `JP06.png` |
-| JP07 | [Manual Tester](https://www.topcv.vn/viec-lam/manual-tester/2307365.html) | CTCP Phần mềm SOFTMART | TopCV | 21/09/2026 | No | 9–14 million VND | `JP07.png` |
+| JP05 | [Manual Tester (QA QC)](https://itviec.com/it-jobs/manual-tester-qa-qc-cong-ty-co-phan-tap-doan-cong-nghe-quang-ich-qig-3723) | Công ty cổ phần Tập đoàn Công nghệ Quảng Ích (QIG) | ITviec | 23/09/2026 | No | 500–1,200 USD/month | `JP05.png` |
+| JP06 | [Middle QA Automation Engineer (Playwright, Selenium)](https://itviec.com/it-jobs/middle-qa-automation-engineer-playwright-selenium-fpt-digital-4422) | FPT Digital | ITviec | 15/09/2026 | **Yes** – testing AI/LLM features (chatbots, RAG, hallucination detection); GenAI assistants for test generation | 800–1,500 USD/month | `JP06.png` |
+| JP07 | [QA Engineer (Tester, QA QC, English) Up to $1500](https://itviec.com/it-jobs/qa-engineer-tester-qa-qc-english-up-to-1500-saritasa-4856) | Saritasa | ITviec | 16/09/2026 | No (AI tools listed only as a preferred skill) | 1,000–1,500 USD/month | `JP07.png` |
 | JP08 | [[Hanoi] Fullstack QA Engineer Lead (Manual, Auto, AI)](https://itviec.com/it-jobs/hanoi-fullstack-qa-engineer-lead-manual-auto-ai-money-forward-vietnam-co-ltd-4636) | Money Forward Vietnam | ITviec | 14/09/2026 | **Yes** – GenAI tools (Cursor, GitHub Copilot, LLM assistants), AI-augmented testing, testing AI features | Not disclosed | `JP08.png` |
 | JP09 | [QA Engineer (Claude Code, Python, React, Manual Tester)](https://itviec.com/it-jobs/qa-engineer-claude-code-python-react-manual-tester-brarista-4435) | Brarista | ITviec | 07/09/2026 | **Yes** – Claude Code for test matrices/regression suites, verifying AI-suggested tags | 800–1,000 USD/month | `JP09.png` |
 | JP10 | [Software Quality Analyst (QA, Tester)](https://itviec.com/it-jobs/software-quality-analyst-qa-tester-mitek-vietnam-0714) | MiTek Vietnam | ITviec | 21/08/2026 | No | Not disclosed | `JP10.png` |
@@ -75,41 +75,41 @@
 - **Salary:** 30,000,000–40,000,000 VND gross/month, depending on experience.
 - **AI Impact Analysis:** AI is positioned as part of test design and failure triage, so it can speed up test-data generation and log analysis. The engineer still owns risk-based coverage, review of AI suggestions and release-quality decisions.
 
-#### JP05 – Nhân Viên Kiểm Thử Phần Mềm (Tester), Công ty TNHH Phát triển Công nghệ Thái Sơn
+#### JP05 – Manual Tester (QA QC), Công ty cổ phần Tập đoàn Công nghệ Quảng Ích (QIG)
 
-- **Link:** [TopCV job posting](https://www.topcv.vn/viec-lam/nhan-vien-kiem-thu-phan-mem-tester/2306333.html)
-- **Dated screenshot:** Posted 18/09/2026; application deadline 18/10/2026.
+- **Link:** [ITviec job posting](https://itviec.com/it-jobs/manual-tester-qa-qc-cong-ty-co-phan-tap-doan-cong-nghe-quang-ich-qig-3723)
+- **Dated screenshot:** “Posted 1 day ago”, captured 24/09/2026 (posted 23/09/2026).
 
-  ![JP05 – Thái Sơn TopCV screenshot](R1_Job_Postings/JP05.png)
+  ![JP05 – QIG ITviec screenshot](R1_Job_Postings/JP05.png)
 
-- **Job description:** Plan test scenarios for software features, review design/solution documents, assess software-development process and product quality before release, and suggest testing techniques.
-- **Required skills:** Requirement analysis, testing process and techniques, test planning, test-case/script creation, collaboration with developers; under one year of experience and a relevant university degree.
-- **Salary:** 9–11 million VND.
-- **AI Impact Analysis:** AI could help draft test ideas and test scripts from requirements, but a tester must check that the cases fit the insurance specialization of the role and the actual release risks.
+- **Job description:** Write test plans and test cases from business analysis, prepare test data and environments, execute tests, log bugs with severity and priority, track and report test results, work with developers on fixes, propose test-process improvements, and hand over product knowledge to the customer-support and operations teams.
+- **Required skills:** 2+ years as a tester; solid knowledge of the test process and testing techniques; teamwork. Experience testing web or mobile applications and business-heavy software is an advantage.
+- **Salary:** 500–1,200 USD/month (the job description states 13–25 million VND/month, depending on experience).
+- **AI Impact Analysis:** AI can assist with drafting test cases and bug reports from business requirements. Understanding complex business rules and training the support team on them still needs a human tester.
 
-#### JP06 – Software Tester, Công ty Cổ phần Voyager
+#### JP06 – Middle QA Automation Engineer (Playwright, Selenium), FPT Digital
 
-- **Link:** [TopCV job posting](https://www.topcv.vn/viec-lam/software-tester/2308656.html)
-- **Dated screenshot:** Posted 22/09/2026; application deadline 22/10/2026.
+- **Link:** [ITviec job posting](https://itviec.com/it-jobs/middle-qa-automation-engineer-playwright-selenium-fpt-digital-4422)
+- **Dated screenshot:** “Posted 9 days ago”, captured 24/09/2026 (posted 15/09/2026).
 
-  ![JP06 – Voyager TopCV screenshot](R1_Job_Postings/JP06.png)
+  ![JP06 – FPT Digital ITviec screenshot](R1_Job_Postings/JP06.png)
 
-- **Job description:** Functionally test software and web applications, document issues, manage test cases, update bug status, retest new versions and follow up on the development team's fixes.
-- **Required skills:** More than 3 years of testing experience, manual and automation testing, Google Sheets or Excel, and Japanese language ability or experience on Japanese-language projects.
-- **Salary:** Negotiable, depending on qualifications and experience.
-- **AI Impact Analysis:** AI can assist with test-case drafting and bug-report summaries. Human review remains necessary for Japanese-language requirements, reproducibility and deciding whether a fix resolves the defect.
+- **Job description:** Build and maintain Playwright/Selenium/Cypress test scripts integrated into CI/CD; perform API, regression, functional and SQL data-integrity testing; design test cases covering happy paths, edge cases and boundary conditions; manage defects in Jira. Test AI/LLM features (chatbots, data extraction, RAG workflows) for accuracy, completeness, source attribution, hallucinations and stability across prompt variations, and use ChatGPT, Claude or Copilot to generate test cases, data and scripts.
+- **Required skills:** Bachelor's in CS/IT; 2–4 years of manual and automation testing; one UI automation framework (Playwright, Selenium or Cypress) with JavaScript/TypeScript, Python or Java; API testing with Postman or automation libraries; SQL; experience testing AI/LLM features or daily use of GenAI assistants in QA work. CI/CD pipelines and RAG/prompt-engineering knowledge are pluses.
+- **Salary:** 800–1,500 USD/month.
+- **AI Impact Analysis:** GenAI assistants can speed up test-case, data and script generation, but they cannot be trusted to judge their own output. The tester is needed to define quality criteria for LLM features and to detect hallucinated or inconsistent answers.
 
-#### JP07 – Manual Tester, CTCP Phần mềm SOFTMART
+#### JP07 – QA Engineer (Tester, QA QC, English) Up to $1500, Saritasa
 
-- **Link:** [TopCV job posting](https://www.topcv.vn/viec-lam/manual-tester/2307365.html)
-- **Dated screenshot:** Posted 21/09/2026; application deadline 21/10/2026.
+- **Link:** [ITviec job posting](https://itviec.com/it-jobs/qa-engineer-tester-qa-qc-english-up-to-1500-saritasa-4856)
+- **Dated screenshot:** “Posted 1 day ago” (refreshed listing), captured 24/09/2026; original posting date 16/09/2026.
 
-  ![JP07 – SOFTMART TopCV screenshot](R1_Job_Postings/JP07.png)
+  ![JP07 – Saritasa ITviec screenshot](R1_Job_Postings/JP07.png)
 
-- **Job description:** Analyze business requirements and specifications; prepare test plans, scenarios, cases and checklists; run functional, integration, regression, UI, end-to-end and API tests; check database data with SQL; report and verify bugs.
-- **Required skills:** Manual testing, API testing, SQL, bug tracking and teamwork with developers, BAs and PO/PM; 1–2 years of web/mobile testing experience; IT-related degree. Automation-script experience is an advantage.
-- **Salary:** 9–14 million VND.
-- **AI Impact Analysis:** AI can speed up checklist drafting and test-data ideas. The tester must validate outputs against the specification and confirm API/database behavior with real test evidence.
+- **Job description:** Test web, mobile (iOS/Android) and enterprise applications built with PHP/.NET/Python backends and React/Angular frontends for international clients, working with Russia-based teams. Analyze specifications in detail, break complex requirements into simple use cases, test APIs with Postman/JMeter, and document bugs with screenshots and videos.
+- **Required skills:** 3+ years as a manual QA/tester (automation preferred); software-testing theory, principles and techniques; attention to detail and analytical thinking; good English. Preferred: web, mobile and API testing, Git, and using AI tools to speed up test design and daily work.
+- **Salary:** 1,000–1,500 USD/month.
+- **AI Impact Analysis:** AI tools can speed up test design and bug documentation across many client projects. Turning complex design requirements into meaningful use cases and explaining quality issues to clients in English remain human work.
 
 #### JP08 – [Hanoi] Fullstack QA Engineer Lead (Manual, Auto, AI), Money Forward Vietnam
 

@@ -1,0 +1,83 @@
+---
+config:
+  layout: tidy-tree
+---
+mindmap
+  root(("Branch 3: AI impact per role"))
+    Manual tester
+      REPLACE
+        Drafting routine test cases from clear specs
+        Formatting bug reports
+        Generating test data variants
+      ASSIST
+        Proposing partitions and boundaries for review
+        Spotting ambiguity in requirements
+        Analysing logs and screenshots
+      CANNOT REPLACE
+        Exploratory testing with domain intuition
+        Usability and UX judgement
+        Deciding defect vs intended behaviour
+        Testing on real devices and environments
+    Automation engineer / SDET
+      REPLACE
+        Boilerplate scripts, locators, page objects
+        Converting manual cases to script skeletons
+        Self-healing locators
+      ASSIST
+        Debugging flaky tests
+        CI failure triage
+        Framework refactoring
+      CANNOT REPLACE
+        Framework architecture decisions
+        Choosing what is worth automating
+        Reviewing AI code for correct assertions
+        Modelling realistic workloads
+    AI/LLM QA tester
+      REPLACE
+        Generating large prompt-variant datasets
+        First-pass LLM-as-judge scoring at scale
+      ASSIST
+        Red-teaming prompt generation
+        Clustering failed responses
+        Computing evaluation metrics
+      CANNOT REPLACE
+        Defining ground truth and thresholds
+        Judging harm, bias, cultural context
+        Validating the judge model itself
+        Regulatory accountability
+    QA lead
+      REPLACE
+        Compiling status dashboards and report drafts
+      ASSIST
+        Estimation and risk brainstorming
+        Drafting the test plan
+        Summarising meetings and defect trends
+      CANNOT REPLACE
+        Go/no-go release decision
+        People management and mentoring
+        Negotiating scope with stakeholders
+        Setting AI-usage policy
+    Quality engineer
+      REPLACE
+        Routine quality-gate checks: static analysis, coverage thresholds
+      ASSIST
+        Anomaly detection in production telemetry
+        Test impact analysis and test selection
+        Root-cause hints
+      CANNOT REPLACE
+        Quality strategy and risk appetite
+        Cross-team trade-offs
+        Interpreting business impact
+    Process QA
+      REPLACE
+        Collecting process metrics
+        Checking template and checklist compliance
+      ASSIST
+        Reviewing audit evidence
+        Drafting root-cause analyses
+        Mapping practices to standard clauses
+      CANNOT REPLACE
+        Audit interviews
+        Judging real process adoption
+        Driving organisational change
+        Compliance sign-off

@@ -79,6 +79,14 @@ Các bảng dùng schema cố định:
    - ZIP chứa: main report PDF, source Markdown, `prompt_log.md`, workbook Excel, device photo, file chứa YouTube links, mindmap, GitHub Issues screenshot, AI-02, AI-03 và AI-05 đã hoàn thành/ký.
    - Commit: `build(hw01): add verified report and submission package`.
 
+## Việc còn lại của R1 (theo dõi nội bộ, không đưa vào report)
+
+- [ ] JP05–JP07: ảnh TopCV chỉ hiện hạn ứng tuyển; ngày đăng (18/09, 22/09, 21/09/2026) lấy từ `datePosted` trong mã trang. Cần thêm ảnh có hiện ngày đăng.
+- [x] JP01 đã thay bằng Floware – Senior Automation Test (AI, QA QC, API), `datePosted` 04/09/2026.
+- [x] Đã chụp `R1_Job_Postings/JP01.png` (Floware) khi đăng nhập ITviec.
+- [x] Ảnh không dùng đã xoá; toàn bộ ảnh đặt tên thống nhất `JP01.png`–`JP10.png`.
+- [ ] Điền ngày nộp thực tế vào report và kiểm lại cửa sổ 60 ngày.
+
 ## Kiểm thử và tiêu chí chấp nhận
 
 - Đúng 10 jobs; tất cả thuộc cửa sổ 60 ngày; ≥3 jobs yêu cầu AI; đủ 10 ảnh có username.

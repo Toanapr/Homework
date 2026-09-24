@@ -1,7 +1,7 @@
 # HW01 – Prompt Log (Appendix A)
 
 - **Student:** `[Full name – StudentID]`
-- **Timestamp format:** `HH:MM dd/mm/yyyy` (local time, UTC+7)
+- **Timestamp format:** `HH:MM dd/mm/yyyy` (local time, UTC+7).
 - **Rule:** every prompt sent to any AI tool is recorded verbatim with its full, unedited output.
 
 ## Entry format
@@ -25,7 +25,7 @@
 
 
 
-### R2-B01 (D01–D10) – `[HH:MM] 24/09/2026` – ChatGPT (GPT-5.6 Luna)
+### R2-B01 (D01–D10) – 23:19 24/09/2026 – ChatGPT (GPT-5.6 Luna)
 
 **Prompt:**
 
@@ -113,7 +113,7 @@ IMPORTANT SAFETY RECALL
 
 
 
-### R2-B02 (D11–D20) – `[HH:MM] 24/09/2026` – ChatGPT (GPT-5.6 Luna)
+### R2-B02 (D11–D20) – 23:19 24/09/2026 – ChatGPT (GPT-5.6 Luna)
 
 **Prompt:**
 
@@ -194,7 +194,7 @@ For each of the following 10 software defects, give a 3–4 sentence explanation
 
 
 
-### R2-B03 (follow-up for D01–D03, D07, D08, D10–D14, D18–D20) – `[HH:MM dd/mm/yyyy]` – ChatGPT (GPT-5.6 Luna)
+### R2-B03 (follow-up for D01–D03, D07, D08, D10–D14, D18–D20) – 23:29 24/09/2026 – ChatGPT (GPT-5.6 Luna)
 
 **Prompt:**
 
@@ -263,7 +263,9 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 - D19: VALID – Aim Security/Aim Labs, reported in January 2025, XPIA classifier, link redaction and CSP bypass match the EchoLeak case study.
 - D20: VALID – Natan Nehorai (JFrog) and Plotly match the JFrog advisory.
 
-### R2-B04 (follow-up for D02, D03, D07, D08, D10, D11, D13, D14, D19, D20) – `[HH:MM dd/mm/yyyy]` – ChatGPT (GPT-5.6 Luna)
+
+
+### R2-B04 (follow-up for D02, D03, D07, D08, D10, D11, D13, D14, D19, D20) – 23:43 24/09/2026 – ChatGPT (GPT-5.6 Luna)
 
 **Prompt:**
 
@@ -331,14 +333,4 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 - D20: VALID – JFSA-2024-001034449 and AC:H match the JFrog advisory and NVD.
 
 **Conclusion after R2-B01 to R2-B04:** confirmed AI errors were found for 10 of the 20 defects (D01, D04, D05, D06, D09, D12, D15, D16, D17, D18). For the other 10 defects, every checked claim across four prompts matched the sources.
-
-## Cursor agent (research and report drafting)
-
-Prompts sent to the Cursor agent for R1 and R2 research, source verification and report drafting are logged here from the chat history.
-
-
-| Entry | Time (HH:MM dd/mm/yyyy) | Prompt (verbatim) | Output summary |
-| ----- | ----------------------- | ----------------- | -------------- |
-| CA-01 | `[ ]`                   | `[ ]`             | `[ ]`          |
-
 

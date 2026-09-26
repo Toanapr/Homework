@@ -384,11 +384,67 @@ Below is a black-box test set based on your specified configuration: **Senko B81
 For a **black-box testing assignment**, these are deliberately based on observable **inputs and outputs** rather than internal components such as the motor, capacitor, wiring, or thermal protection. This is appropriate because the tester should judge the device from externally observable behavior.
 ```
 
-**Verification:** see report section 3.3 (per-test-case verdicts) and 3.4 (edge cases the output missed).
+**Verification:** superseded. The prompt described the speed control ambiguously ("piano keys + Off / rotary knob") and ChatGPT designed for piano keys, while the fan has a rotary knob. The prompt was corrected and re-sent as R3-T02, which is the artifact evaluated in the report.
 
 ### R3-C01 – 23:24 26/09/2026 – Cursor (Claude)
 
 **Prompt:** the R3-T01 prompt and output above, pasted into Cursor with the request to continue the physical-product requirement.
 
 **Output:** draft of report sections 3.1–3.6 (critique of R3-T01, AI-missed edge cases, refined 15 test cases marked NOT RUN). Reviewed and edited by the student before submission.
+
+### R3-T02 (initial 15 test cases, corrected prompt) – `[HH:MM] 26/09/2026` – ChatGPT (`[model]`)
+
+**Prompt:**
+
+```text
+I am testing a physical household electric fan: Senko B813, manufactured 2014,
+standing fan. Controls: a rotary speed knob with 4 positions (0 = Off, 1, 2, 3)
+and a push-pull oscillation knob on the motor housing. Other adjustments: none.
+Design 15 black-box test cases for this device. For each: ID, Objective, Preconditions,
+Input, Steps, Expected Result. Cover functional behavior, speed modes, oscillation,
+usability, reliability and safety. Format as a table.
+```
+
+**Output (verbatim):**
+
+```text
+Below is a **black-box test suite of exactly 15 test cases** for the specified Senko B813. I’m treating the device configuration you provided as the test oracle; public references also describe the B813 family as having mechanical speed control and 3 speed levels. :chatgpt-content-reference{index="0"}
+
+| ID | Objective | Preconditions | Input | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **TC01** | Verify fan remains OFF at position 0 | Fan connected to power; knob at 0 | Speed = 0 | 1. Connect power.<br>2. Set knob to 0.<br>3. Observe fan. | Fan does not rotate; no airflow is produced. |
+| **TC02** | Verify low-speed operation | Fan connected; initially OFF | Speed = 1 | 1. Turn knob from 0 → 1.<br>2. Observe blade rotation and airflow. | Fan starts rotating and produces **low-speed airflow** continuously. |
+| **TC03** | Verify medium-speed operation | Fan connected; initially OFF | Speed = 2 | 1. Turn knob from 0 → 2.<br>2. Observe airflow. | Fan operates continuously at **medium speed**, noticeably stronger than level 1. |
+| **TC04** | Verify high-speed operation | Fan connected; initially OFF | Speed = 3 | 1. Turn knob from 0 → 3.<br>2. Observe airflow. | Fan operates continuously at **maximum speed**, stronger than levels 1 and 2. |
+| **TC05** | Verify all speed transitions | Fan running | 1 → 2 → 3 → 2 → 1 → 0 | 1. Start at speed 1.<br>2. Change through each position sequentially.<br>3. Return to 0. | Fan responds to every knob position without unexpected stopping, abnormal noise, or failure to change speed. |
+| **TC06** | Verify direct transition from OFF to each speed | Fan connected | 0 → 1, 0 → 2, 0 → 3 | 1. Set knob to 0.<br>2. Select speed 1 and observe.<br>3. Stop.<br>4. Repeat for 2 and 3. | Fan starts correctly from OFF at each available speed position. |
+| **TC07** | Verify oscillation OFF/fixed-head operation | Fan running at speed 1 | Oscillation knob UP | 1. Set speed to 1.<br>2. Leave/pull oscillation knob in the OFF position.<br>3. Observe fan head for several cycles. | Fan head remains stationary and airflow is directed in a fixed direction. |
+| **TC08** | Verify oscillation activation | Fan running | Push oscillation knob DOWN | 1. Start fan at speed 1.<br>2. Push the oscillation knob down.<br>3. Observe the fan head. | Fan head begins moving horizontally from side to side; fan continues running normally. |
+| **TC09** | Verify oscillation can be stopped | Fan oscillating | Pull oscillation knob UP | 1. Activate oscillation.<br>2. Allow head to move for several cycles.<br>3. Pull knob up.<br>4. Observe. | Oscillation stops and the fan head remains in a fixed position. |
+| **TC10** | Verify oscillation works at different speeds | Fan connected | Speeds 1, 2, 3 + oscillation ON | 1. Test oscillation at speed 1.<br>2. Repeat at speed 2.<br>3. Repeat at speed 3. | Oscillation operates at all three speed settings without abnormal vibration or interruption. |
+| **TC11** | Verify usable control operation | Fan OFF and connected | Rotate speed knob through 0–3 | 1. Operate the knob repeatedly between all positions.<br>2. Check that each position can be selected clearly. | Knob moves between positions predictably; each position can be selected without sticking, excessive force, or ambiguous operation. |
+| **TC12** | Verify stable operation during extended use | Fan placed on a stable, level surface | Speed 2 + oscillation ON | 1. Start fan at speed 2.<br>2. Enable oscillation.<br>3. Run continuously for an extended period, e.g. 30–60 min.<br>4. Observe operation periodically. | Fan continues operating without unexpected shutdown, severe vibration, abnormal smell, smoke, sparking, or significant deterioration in airflow. |
+| **TC13** | Verify mechanical stability and abnormal vibration | Fan assembled correctly on stable surface | Speed 3 + oscillation OFF/ON | 1. Run at speed 3 with oscillation OFF.<br>2. Observe base and fan body.<br>3. Enable oscillation and observe again. | Fan remains stable; no excessive shaking, walking, tipping tendency, or abnormal mechanical noise occurs. |
+| **TC14** | Verify protective safety during normal operation | Fan fully assembled; protective grille intact | Speed 3 | 1. Run fan at speed 3.<br>2. Visually inspect grille and rotating blades without inserting objects.<br>3. Check for exposed moving/electrical parts. | Protective grille remains secure; rotating blades are not directly accessible during normal operation; no exposed hazardous electrical parts are observed. |
+| **TC15** | Verify safe shutdown and restart | Fan running at speed 2 | 2 → 0 → 1 | 1. Run fan at speed 2.<br>2. Turn knob to 0.<br>3. Confirm fan stops completely.<br>4. Wait until blades stop.<br>5. Turn knob to 1. | Fan stops when set to 0. After shutdown, it can be restarted normally at speed 1 without abnormal noise, smell, sparking, or other unsafe behavior. |
+
+### Coverage
+
+- **Functional behavior:** TC01–TC06
+- **Speed modes:** TC02–TC06
+- **Oscillation:** TC07–TC10
+- **Usability:** TC11
+- **Reliability/endurance:** TC12–TC13
+- **Safety:** TC14–TC15
+
+For a physical appliance, safety cases should be **observation-based**: don't deliberately insert fingers/objects into the grille, introduce water, overload the motor, or create electrical faults merely to test failure behavior. Public documentation for the B813 family also describes a protective grille and mechanical 3-speed control. :chatgpt-content-reference{index="1"}
+```
+
+**Verification:** see report section 3.3 (per-test-case verdicts) and 3.4 (edge cases the output missed).
+
+### R3-C02 – 23:34 26/09/2026 – Cursor (Claude)
+
+**Prompt:** the R3-T02 output above, pasted into Cursor with the request to update the prompt log and the report.
+
+**Output:** re-evaluation of report sections 3.3–3.5 against R3-T02. Reviewed and edited by the student before submission.
 

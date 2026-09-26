@@ -406,33 +406,39 @@
 - **Measurable expected results:** where no manufacturer specification is available, the tester-defined thresholds are stated in the test case so the verdict is not subjective.
 - **Safety limits:** no disassembly, no contact with moving blades, no electrical fault injection. Guard checks are done unplugged.
 
-### 3.3 Evaluation of the initial AI output (R3-T01)
+### 3.3 Evaluation of the initial AI output (R3-T02)
 
-ChatGPT produced 15 test cases (prompt log entry R3-T01). Each was reviewed against the device and against black-box testing practice.
+ChatGPT produced 15 test cases from the corrected prompt (prompt log entry R3-T02). An earlier attempt (R3-T01) used an ambiguous control description and is kept in the prompt log only. Each R3-T02 test case was reviewed against the device and against black-box testing practice.
 
 | AI TC | Verdict | Reasoning |
 |---|---|---|
-| TC-01 | VALID | Correct, observable check of the Off state at power-on. |
-| TC-02 | INCOMPLETE | "Noticeable airflow" is not measurable; it does not check that the blades start from standstill at the lowest speed, which is the hardest start condition for an aged motor. |
-| TC-03 | INCOMPLETE | "Airflow is greater than Speed 1" gives no measurement method. |
-| TC-04 | INCOMPLETE | Same problem as TC-03. |
-| TC-05 | VALID | The sequence 1 → 2 → 3 → 2 → 1 matches how a rotary knob is operated. |
-| TC-06 | VALID | Covers Off from every speed. |
-| TC-07 | INCOMPLETE | Assumes "push down = on" without a source; no sweep angle or period is checked. |
-| TC-08 | INCOMPLETE | Same assumption as TC-07. |
-| TC-09 | VALID | Speed × oscillation combination is covered. |
-| TC-10 | INCOMPLETE | Classified as usability instead of safety; "excessive rocking" is undefined. |
-| TC-11 | INCOMPLETE | Refers to "speed buttons", but the fan has a rotary knob; pass criterion ("without excessive force") is subjective; label legibility is not checked. |
-| TC-12 | INCOMPLETE | "Excessive sparking" cannot be observed from outside a closed switch, which contradicts the output's own black-box statement. |
-| TC-13 | VALID | Repeated oscillation cycles are a reasonable reliability check. |
-| TC-14 | INVALID | The steps leave the control at Speed 2, but the expected result assumes it is at Off. A mechanical rotary knob stays at position 2 when power is lost, so the fan restarts at Speed 2 when power returns. |
-| TC-15 | INCOMPLETE | "Several hours" and "abnormal overheating" are unbounded and cannot give a verdict. |
+| TC01 | VALID | Correct, observable check of the Off position. |
+| TC02 | INCOMPLETE | "Low-speed airflow" is not measurable; it does not check that the blades start unaided from standstill at the lowest speed, the hardest start condition for an aged motor. |
+| TC03 | INCOMPLETE | "Noticeably stronger than level 1" gives no measurement method. |
+| TC04 | INCOMPLETE | Same problem as TC03. |
+| TC05 | VALID | The sequence 1 → 2 → 3 → 2 → 1 → 0 matches how a rotary knob is operated. |
+| TC06 | INVALID | The objective is a "direct transition" from 0 to 2 and 0 to 3, which a sequential rotary knob cannot perform: the knob always passes through the lower positions. The case also duplicates TC02–TC04. |
+| TC07 | INCOMPLETE | Assumes "knob UP = oscillation off" without a source, and duplicates TC09. |
+| TC08 | INCOMPLETE | Assumes "push DOWN = on" without a source; no sweep angle or period is checked. |
+| TC09 | INCOMPLETE | Same assumption as TC08; "remains in a fixed position" gives no stop criterion (how soon the head must stop). |
+| TC10 | VALID | Speed × oscillation combination is covered. |
+| TC11 | INCOMPLETE | Pass criteria ("excessive force", "ambiguous operation") are subjective; label legibility is not checked. The precondition "Fan OFF" conflicts with the step of rotating through 1–3, which runs the fan. |
+| TC12 | INCOMPLETE | "An extended period, e.g. 30–60 min" is unbounded; "sparking" cannot be observed from outside the closed switch; it runs at Speed 2, not at the maximum load. |
+| TC13 | INCOMPLETE | "Excessive shaking" and "tipping tendency" are undefined; it is listed under reliability although it is a stability (safety) check. |
+| TC14 | INCOMPLETE | Visual inspection only, while the blades are spinning; it never checks whether a finger can actually reach a blade, which can be checked safely with the fan unplugged. |
+| TC15 | VALID | Observable shutdown and restart. |
 
-**Summary:** VALID 5/15 (33.3%), INVALID 1/15 (6.7%), INCOMPLETE 9/15 (60.0%); total 100%.
+**Summary:** VALID 4/15 (26.7%), INVALID 1/15 (6.6%), INCOMPLETE 10/15 (66.7%); total 100%.
 
-Other issues in the output: the prompt described the control ambiguously ("3 speed piano keys + Off / rotary knob"). ChatGPT did not ask which one the fan has; it silently chose piano keys ("Press Speed 1", "speed buttons"), while the actual fan has a rotary knob. It also claimed the design is "consistent with common mechanical fan designs" with an unverifiable citation marker.
+Other issues in the output:
+
+- It twice claims that "public references" and "public documentation for the B813 family" confirm the design, but only shows citation markers (`:chatgpt-content-reference`) with no document that can be checked. These claims are unverifiable and were not used.
+- It assumes the oscillation direction (push = on) without asking.
+- It has no case for power interruption, although a mechanical knob keeps its position when power is lost.
 
 ### 3.4 Edge cases missed by the AI
+
+None of the following cases appear in R3-T02.
 
 | Final TC | Edge case | Why the AI missed it |
 |---|---|---|
@@ -440,9 +446,9 @@ Other issues in the output: the prompt described the control ambiguously ("3 spe
 | TC-07 | Speed knob turned beyond its end positions `0` and `3` | `[Student explanation]` |
 | TC-10 | Oscillation knob changed while the fan is off | `[Student explanation]` |
 | TC-11 | Head held or turned by hand while oscillating | `[Student explanation]` |
-| TC-14 | Finger access through the front guard | `[Student explanation]` |
+| TC-12 | Power interruption with the knob left at a speed position | `[Student explanation]` |
 
-Evidence: screenshot of the R3-T01 conversation showing none of these cases — `R3_Device/ai_output_R3-T01.png`.
+Evidence: screenshots of the R3-T02 conversation — `R3_Device/ai_output_R3-T02.png`.
 
 ### 3.5 Final test cases
 
@@ -461,9 +467,9 @@ Verdict values: PASS, FAIL, NOT RUN. Test cases that have not been executed are 
 | TC-09 | Oscillation at each speed | Oscillation on | `1`, `2`, `3` | 1. Run one full sweep at each speed.<br>2. Listen for clicking or grinding. | Oscillation continues at every speed with no sticking, stopping or grinding noise. | NOT RUN | NOT RUN | Decision table | No | – |
 | TC-10 | Oscillation set while the fan is off | Fan at `0`, oscillation off | Oscillation knob on, then speed knob to `1` | 1. With the fan off, set oscillation on.<br>2. Confirm the motor does not start.<br>3. Turn the speed knob to `1`. | Changing the oscillation knob does not start the motor; after turning to `1`, the fan runs and oscillates immediately. | NOT RUN | NOT RUN | State transition | **Yes** | – |
 | TC-11 | Head held or turned by hand | Fan at `1`, hand on the rear motor housing only (never the guard) | Gentle hold for 2 s during oscillation; gentle turn with oscillation off | 1. With oscillation on, hold the head still for 2 s, then release.<br>2. With oscillation off, turn the head 20° and release. | Step 1: the gear slips without grinding and oscillation resumes after release. Step 2: the head stays at the new position. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
-| TC-12 | Behaviour after power interruption | Fan at `2` | Unplug 10 s, plug in; repeat with knob at `0` | 1. With the knob at `2`, unplug and replug.<br>2. Turn the knob to `0`, unplug and replug. | Step 1: the fan restarts at Speed 2 as soon as power returns (the knob stays at `2`). Step 2: the fan stays off. | NOT RUN | NOT RUN | Decision table | No (corrects AI TC-14) | – |
+| TC-12 | Behaviour after power interruption | Fan at `2` | Unplug 10 s, plug in; repeat with knob at `0` | 1. With the knob at `2`, unplug and replug.<br>2. Turn the knob to `0`, unplug and replug. | Step 1: the fan restarts at Speed 2 as soon as power returns (the knob stays at `2`). Step 2: the fan stays off. | NOT RUN | NOT RUN | Decision table | **Yes** | – |
 | TC-13 | Stability at maximum load | Level floor, tape around the base | `3` + oscillation on, 5 min | 1. Run for 5 min.<br>2. Measure any base displacement against the tape. | No tipping or rocking; the base moves less than 1 cm. | NOT RUN | NOT RUN | BVA | No | – |
-| TC-14 | Finger cannot reach the blades | Fan unplugged, blades stopped | Ruler; finger test at the front and rear guard | 1. Measure the largest gap in the front and rear guard.<br>2. Try to touch a blade with a fingertip through the gap.<br>3. Pull the guard clips gently by hand. | A fingertip cannot reach a blade; the guard stays closed when pulled by hand. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
+| TC-14 | Finger cannot reach the blades | Fan unplugged, blades stopped | Ruler; finger test at the front and rear guard | 1. Measure the largest gap in the front and rear guard.<br>2. Try to touch a blade with a fingertip through the gap.<br>3. Pull the guard clips gently by hand. | A fingertip cannot reach a blade; the guard stays closed when pulled by hand. | NOT RUN | NOT RUN | Error guessing | No (AI TC14 is visual only) | – |
 | TC-15 | Endurance for 60 min | Clear area, room temperature recorded | `3` + oscillation on, 60 min | 1. Run 60 min.<br>2. At 0, 30 and 60 min record speed, oscillation, noise, and whether the motor housing and cord can be touched comfortably. | Continuous operation and oscillation; no burning smell or smoke; housing and cord warm but comfortable to touch; noise level stable. | NOT RUN | NOT RUN | Reliability | No | – |
 
 ### 3.6 Execution evidence and defects

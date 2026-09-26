@@ -508,6 +508,30 @@ Verdict values: PASS, FAIL, NOT RUN. Test cases that have not been executed are 
 |---|---|---|---|---|---|---|
 | – | – | No defects recorded yet (no test executed). | – | – | – | – |
 
+### 3.7 Test summary
+
+Copied from the "Test Summary" sheet of `HW01_Test_Workbook.xlsx` (sheets: Test Summary, Test Cases, Checklist, Defects). Status on 27/09/2026, before execution.
+
+| Metric | Value | Target |
+|---|---|---|
+| Test cases designed | 15 | 15 |
+| Executed (PASS + FAIL) | 0 | ≥ 5 |
+| PASS / FAIL / BLOCKED | 0 / 0 / 0 | – |
+| NOT RUN | 15 | – |
+| Videos recorded | 0 | ≥ 5 |
+| Edge cases missed by the AI | 5 | ≥ 3 |
+| Defects logged | 0 | aim ≥ 5 |
+
+| Technique | Designed | Executed |
+|---|---|---|
+| State transition | 4 | 0 |
+| BVA | 3 | 0 |
+| Error guessing | 3 | 0 |
+| Decision table | 2 | 0 |
+| EP | 1 | 0 |
+| Usability | 1 | 0 |
+| Reliability | 1 | 0 |
+
 ## AI Critique
 
 Across this homework the AI was most useful as a fast first draft and least reliable exactly where a tester has to be precise. In Requirement 2, ChatGPT (GPT-5.6 Luna) explained all 20 defects fluently, yet 10 explanations contained a confirmed error: shifted timelines (FAA, AT&T), an invented expansion of the acronym FPRSA-R, a wrong fix version for LangChain, source URLs that returned 404 or did not resolve, and a one-sided CVSS score for Citrix Bleed. The pattern is that the AI reproduces the shape of a correct answer and fills gaps with plausible details instead of admitting uncertainty. In Requirement 3, ChatGPT produced 15 neat test cases, but most expected results could not be measured ("noticeably stronger", "excessive shaking"), one case required a direct 0 → 3 jump that a rotary knob cannot make, and when my first prompt was ambiguous it silently assumed piano keys instead of asking. The coding assistant I used, Cursor, made the same assumption in its first draft until I corrected it. Both missed edge cases that only appear when you handle the real device: a knob resting between detents, turning past the end positions, setting oscillation while the fan is off, holding the head, and a power cut with the knob left on a speed. They missed them because they reason from the text description and from typical test suites, not from the physical input space, and ChatGPT deliberately avoided physical interaction for safety. The principle I learned is to treat AI output as an untrusted draft: verify every fact against a primary source, demand measurable expected results, and derive edge cases from the device itself.

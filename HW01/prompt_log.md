@@ -32,7 +32,7 @@ Follow-up prompt at 18:16 24/09/2026: `mindmap chỉ nên là 1 hình thôi`
 
 **Output:** see `R1_Mindmap/Mindmap_AI_Output.md`, `QAQC_2026_Mindmap.mmd` and `QAQC_2026_Mindmap.png`.
 
-**Verification:** `[pending – the 3 mistakes found against the ISTQB CTFL v4.0 syllabus]`
+**Verification:** checked against ISTQB CTFL v4.0.1 (15/09/2024) and v4.0 (21/04/2023). Three mistakes: (1) QA/QC definitions follow the outdated v4.0 wording of §1.2.2; (2) no mapping of activities or job titles to the two roles of §1.4.5; (3) test case drafts and report drafts classified as REPLACE, contradicted by the R2 and R3 evidence. Details and corrected mindmap: report section 1.4.
 
 ## Requirement 2 – AI explanations of the 20 defects
 
@@ -526,6 +526,9 @@ Sessions: S1 = planning session on 23/09/2026 (Codex/OpenAI, see below); S2 = R1
 | CA-45 | 23:41 26/09/2026 | S4 | không cần commit giờ của r3-t01 là 23:26 |
 | CA-46 | 23:41 26/09/2026 | S4 | vậy 23:24 |
 | CA-47 | 23:44 26/09/2026 | S4 | hãy viết giúp tôi phần này |
+| CA-48 | 23:54 26/09/2026 | S4 | commit đi |
+| CA-49 | 23:57 26/09/2026 | S4 | thông tin<br>Student name (printed): Huỳnh Thái Toàn<br>Student ID: 23120175<br>Class / Cohort: CQ2023/31<br>Assignment date:26/09/2026 |
+| CA-50 | 23:57 26/09/2026 | S4 | sử mindmap |
 
 ## Codex / OpenAI planning session (S1)
 

@@ -531,6 +531,10 @@ Sessions: S1 = planning session on 23/09/2026 (Codex/OpenAI, see below); S2 = R1
 | CA-50 | 23:57 26/09/2026 | S4 | sử mindmap |
 | CA-51 | 00:01 27/09/2026 | S4 | hãy viết giúp tôi workbook excel |
 | CA-52 | 00:12 27/09/2026 | S4 | tên giảng viên Trần Thị Bích Hạnh và đây là ảnh chụp thiết bị cùng mssv<br>[attached: device photo with student ID card, saved as R3_Device/device_with_student_id.jpg] |
+| CA-53 | 00:18 27/09/2026 | S4 | có cần ảnh nhãn thông số không, đề có yêu cầu không |
+| CA-54 | 00:19 27/09/2026 | S4 | vậy khỏi điền ảnh nhãn thông số |
+| CA-55 | 00:19 27/09/2026 | S4 | serial tôi ghi rồi |
+| CA-56 | 00:20 27/09/2026 | S4 | rồi còn thiếu gì nữa |
 
 ## Codex / OpenAI planning session (S1)
 

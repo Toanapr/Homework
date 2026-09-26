@@ -334,3 +334,61 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 
 **Conclusion after R2-B01 to R2-B04:** confirmed AI errors were found for 10 of the 20 defects (D01, D04, D05, D06, D09, D12, D15, D16, D17, D18). For the other 10 defects, every checked claim across four prompts matched the sources.
 
+## Requirement 3 – Physical product test cases
+
+### R3-T01 (initial 15 test cases) – `[HH:MM] 26/09/2026` – ChatGPT (`[model]`)
+
+**Prompt:**
+
+```text
+I am testing a physical household electric fan: senko B813, manufactured 2014,
+standing fan. Controls: 3 speed piano keys + Off / rotary knob,
+oscillation <push-pull button>. Other adjustments: no.
+Design 15 black-box test cases for this device. For each: ID, Objective, Preconditions,
+Input, Steps, Expected Result. Cover functional behavior, speed modes, oscillation,
+usability, reliability and safety. Format as a table.
+```
+
+**Output (verbatim):**
+
+```text
+Below is a black-box test set based on your specified configuration: **Senko B813, manufactured 2014, standing fan, 3 piano-key speed controls + Off/rotary control, push-pull oscillation button**. The 3-level speed behavior and push/pull oscillation pattern are also consistent with common mechanical fan designs. :chatgpt-content-reference{index="0"}
+
+| ID | Objective | Preconditions | Input | Steps | Expected Result |
+|---|---|---|---|---|---|
+| **TC-01** | Verify fan remains OFF when switched to Off | Fan plugged into a suitable power outlet; fan initially OFF | Off / `0` | 1. Plug in the fan.<br>2. Leave the control at Off.<br>3. Observe the blades. | Fan does not start; blades remain stationary; no abnormal sound or movement. |
+| **TC-02** | Verify Low-speed operation | Fan plugged in and OFF | Speed 1 | 1. Press Speed 1.<br>2. Observe blade rotation and airflow. | Fan starts and operates continuously at the lowest speed with noticeable airflow. |
+| **TC-03** | Verify Medium-speed operation | Fan running at Speed 1 | Speed 2 | 1. Press Speed 2.<br>2. Observe blade rotation and airflow. | Fan changes to medium speed; airflow is greater than Speed 1. |
+| **TC-04** | Verify High-speed operation | Fan running | Speed 3 | 1. Press Speed 3.<br>2. Observe blade rotation and airflow. | Fan operates at the highest speed; airflow is greater than Speed 2. |
+| **TC-05** | Verify direct transition between speed modes | Fan running at Speed 1 | Speed 1 → 2 → 3 → 2 → 1 | 1. Start at Speed 1.<br>2. Select Speed 2.<br>3. Select Speed 3.<br>4. Return to Speed 2.<br>5. Return to Speed 1. | Each selected speed takes effect correctly without requiring power cycling or causing unexpected shutdown. |
+| **TC-06** | Verify fan can be stopped from any speed | Fan running at each speed | Off | 1. Run fan at Speed 1 and select Off.<br>2. Repeat at Speed 2.<br>3. Repeat at Speed 3. | Fan stops each time after selecting Off; blades gradually come to a stop without abnormal behavior. |
+| **TC-07** | Verify oscillation can be enabled | Fan running at Speed 1 or higher; oscillation initially OFF | Push oscillation button down | 1. Start fan.<br>2. Push the oscillation button down.<br>3. Observe the fan head for one complete cycle. | Fan head begins sweeping left and right smoothly while the blades continue rotating. |
+| **TC-08** | Verify oscillation can be disabled | Fan running and oscillating | Pull oscillation button up | 1. Start oscillation.<br>2. Pull the oscillation button upward.<br>3. Observe the fan head. | Oscillation stops; fan head remains stationary while the fan continues operating. |
+| **TC-09** | Verify oscillation works at different speeds | Fan operational; oscillation initially OFF | Speed 1, 2, 3 | 1. Run at Speed 1 and enable oscillation.<br>2. Change to Speed 2.<br>3. Change to Speed 3.<br>4. Observe oscillation at each speed. | Oscillation continues correctly at all three speed settings without abnormal noise, sticking, or unexpected stopping. |
+| **TC-10** | Verify fan remains stable during operation | Fan assembled on a firm, level surface | Speed 3 + oscillation ON | 1. Place fan on a level surface.<br>2. Run at Speed 3.<br>3. Enable oscillation.<br>4. Observe the base and fan body. | Fan remains stable without excessive rocking, walking, tipping, or abnormal vibration. |
+| **TC-11** | Verify controls are understandable and usable | Fan OFF and unplugged initially | Speed buttons, Off control, oscillation button | 1. Identify the controls without consulting instructions.<br>2. Select Off, Speed 1/2/3, and oscillation controls. | Controls can be distinguished and operated without excessive force or confusing/unintended activation. |
+| **TC-12** | Verify repeated operation of speed controls | Fan connected to power | Repeated Speed 1 → 2 → 3 → Off cycles | 1. Perform the sequence 1 → 2 → 3 → Off repeatedly for 20 cycles.<br>2. Observe controls and fan operation. | Each selection produces the corresponding behavior; no sticking, failure to respond, excessive sparking/noise, or degradation of operation is observed. |
+| **TC-13** | Verify repeated oscillation operation | Fan running at Speed 2 | Push → pull oscillation control repeatedly | 1. Start fan at Speed 2.<br>2. Push oscillation button down.<br>3. Wait for oscillation to begin.<br>4. Pull it up to stop.<br>5. Repeat 10 times. | Oscillation starts and stops reliably on every cycle; button remains mechanically functional and fan continues operating normally. |
+| **TC-14** | Verify safe behavior after restoring power | Fan initially running, then power disconnected | Power interruption and restoration | 1. Run fan at Speed 2.<br>2. Disconnect power using the normal power switch/outlet.<br>3. Restore power.<br>4. Observe whether the fan starts. | Fan should not unexpectedly restart if its physical control is in the Off position; no abnormal electrical or mechanical behavior occurs. |
+| **TC-15** | Verify long-duration operation and safety | Fan properly assembled, unobstructed, placed on stable surface | Speed 3 + oscillation ON for an extended period | 1. Run fan at Speed 3 with oscillation enabled for several hours under normal conditions.<br>2. Periodically observe airflow, noise, vibration, controls, power cord and motor housing. | Fan continues operating without abnormal overheating, burning smell, smoke, excessive vibration/noise, intermittent stopping, or other unsafe behavior. |
+
+### Coverage
+
+- **Functional behavior:** TC-01–06
+- **Speed modes:** TC-02–06
+- **Oscillation:** TC-07–09, TC-13
+- **Usability:** TC-10–11
+- **Reliability:** TC-12–13, TC-15
+- **Safety:** TC-10, TC-14–15
+
+For a **black-box testing assignment**, these are deliberately based on observable **inputs and outputs** rather than internal components such as the motor, capacitor, wiring, or thermal protection. This is appropriate because the tester should judge the device from externally observable behavior.
+```
+
+**Verification:** see report section 3.3 (per-test-case verdicts) and 3.4 (edge cases the output missed).
+
+### R3-C01 – 23:24 26/09/2026 – Cursor (Claude)
+
+**Prompt:** the R3-T01 prompt and output above, pasted into Cursor with the request to continue the physical-product requirement.
+
+**Output:** draft of report sections 3.1–3.6 (critique of R3-T01, AI-missed edge cases, refined 15 test cases marked NOT RUN). Reviewed and edited by the student before submission.
+

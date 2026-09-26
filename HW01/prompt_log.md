@@ -2,7 +2,7 @@
 
 - **Student:** Huỳnh Thái Toàn – 23120175
 - **Timestamp format:** `HH:MM dd/mm/yyyy` (local time, UTC+7).
-- **Rule:** every prompt sent to any AI tool is recorded verbatim with its full, unedited output.
+- **Rule:** ChatGPT prompts (R2-B01 to R2-B04, R3-T01, R3-T02) and the R1 mindmap prompt (R1-M01) are recorded verbatim. Cursor session prompts and Codex planning prompts are omitted from this log by student decision.
 
 ## Entry format
 
@@ -351,7 +351,7 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 
 ### R3-T01 (initial 15 test cases) – 23:24 26/09/2026 – ChatGPT (GPT-5.6 Luna)
 
-Timestamp: reported by the student, no screenshot. Consistent with R3-C01, where the output was pasted into Cursor at 23:24.
+Timestamp: reported by the student, no screenshot. The output was pasted into Cursor at 23:24.
 
 **Prompt:**
 
@@ -400,12 +400,6 @@ For a **black-box testing assignment**, these are deliberately based on observab
 ```
 
 **Verification:** superseded. The prompt described the speed control ambiguously ("piano keys + Off / rotary knob") and ChatGPT designed for piano keys, while the fan has a rotary knob. The prompt was corrected and re-sent as R3-T02, which is the artifact evaluated in the report.
-
-### R3-C01 – 23:24 26/09/2026 – Cursor (Claude)
-
-**Prompt:** the R3-T01 prompt and output above, pasted into Cursor with the request to continue the physical-product requirement.
-
-**Output:** draft of report sections 3.1–3.6 (critique of R3-T01, AI-missed edge cases, refined 15 test cases marked NOT RUN). Reviewed and edited by the student before submission.
 
 ### R3-T02 (initial 15 test cases, corrected prompt) – 23:33 26/09/2026 – ChatGPT (GPT-5.6 Luna)
 
@@ -458,84 +452,3 @@ For a physical appliance, safety cases should be **observation-based**: don't de
 ```
 
 **Verification:** see report section 3.3 (per-test-case verdicts) and 3.4 (edge cases the output missed).
-
-### R3-C02 – 23:34 26/09/2026 – Cursor (Claude)
-
-**Prompt:** the R3-T02 output above, pasted into Cursor with the request to update the prompt log and the report.
-
-**Output:** re-evaluation of report sections 3.3–3.5 against R3-T02. Reviewed and edited by the student before submission.
-
-### R3-C03 – 23:36 26/09/2026 – Cursor (Claude)
-
-**Prompt:** "bạn hãy viết giúp tôi luôn phần Student explanation"
-
-**Output:** the "Why the AI missed it" explanations for TC-06, TC-07, TC-10, TC-11 and TC-12 in report section 3.4. Reviewed by the student before submission.
-
-## Cursor Agent prompts (all sessions)
-
-Every prompt sent to the Cursor Agent, copied verbatim from the Cursor chat history (timestamps are the times shown in that history). Cursor outputs are the resulting file changes, identified by the Git commits in the same time window; the full agent transcripts can be exported from Cursor on request.
-
-Sessions: S1 = planning session on 23/09/2026 (Codex/OpenAI, see below); S2 = R1/R2 work, 24–25/09/2026; S3 = R1 mindmap, 24/09/2026; S4 = R3 and AI compliance, 26/09/2026.
-
-| # | Time | Session | Prompt (verbatim) |
-|---|---|---|---|
-| CA-01 | 16:59 24/09/2026 | S2 | chỉnh sủa lại đúng chính xác về số lượng yêu cầu, tại vì tôi thấy đang ghi bị dư vài cái<br>Each posting: link, dated screenshot, job description, required skills, salary.<br>Write 12 sentences of "AI Impact Analysis" per posting. |
-| CA-02 | 17:14 24/09/2026 | S2 | hãy check lại giúp tôi<br>Còn thiếu, chưa kiểm chứng:<br>JP01, JP03 và JP05–JP09 vẫn thiếu bằng chứng ngày đăng hợp lệ.<br>JP08 và JP09 đang hiển thị "Expired".<br>Vẫn còn đoạn mô tả tạm (placeholder) ở JP01–JP03 và JP08–JP10.<br>Đoạn phân tích của JP05 có nhắc "insurance domain"; bạn nên đối chiếu lại với tin gốc.<br>Ngày nộp bài vẫn đang để trống. |
-| CA-03 | 17:23 24/09/2026 | S2 | tôi xác nhận rằng jp3 vẫn còn, bạn thử lại đi |
-| CA-04 | 17:28 24/09/2026 | S2 | bạn hãy giúp tôi tìm kiếm cái khác để thay thế jp8 và jp9 |
-| CA-05 | 17:38 24/09/2026 | S2 | đổi link của jp3 thành cái này https://dxctechnology.wd1.myworkdayjobs.com/DXCJobs/job/VNM---HO-CHI-MINH-CITY/Quality-Engineering_51585699?src=JB-11100 , tôi sẽ chụp có ngày |
-| CA-06 | 17:41 24/09/2026 | S2 | tôi đã thay đổi ảnh, cái phần nội dung bạn không nên ghi quá trình lại vd như recapture pending, .... |
-| CA-07 | 17:46 24/09/2026 | S2 | vậy hãy thay luôn jp1 đi |
-| CA-08 | 17:50 24/09/2026 | S2 | bây giờ hãy thay đổi tên file thống nhất JP**.png, và cập nhật lại tên file trong report và tên file ngoài, các ảnh không dùng tôi đã xóa hết |
-| CA-09 | 17:52 24/09/2026 | S2 | kiểm tra xem yêu cầu của requirement 1 xong chưa |
-| CA-10 | 17:54 24/09/2026 | S2 | hãy thay đổi các jp5 tới jp7 |
-| CA-11 | 17:59 24/09/2026 | S2 | tôi đã chụp ảnh rồi đó, kiểm tra xem ổn chưa, lưu ý là 10 job không đc trùng nha |
-| CA-12 | 18:05 24/09/2026 | S2 | hãy đề xuất vẽ mind map như nào |
-| CA-13 | 18:08 24/09/2026 | S3 | Create a mindmap about QA/QC in 2026.<br>Root: "QA/QC 2026+".<br>Branch 1: the ISTQB CTFL v4.0 test process – list each test activity with its main tasks and work products.<br>Branch 2: QA/QC job roles in 2026 (manual tester, automation/SDET, AI/LLM QA tester, QA lead, quality engineer, process QA) with key responsibilities and skills.<br>Branch 3: for each role, mark which work AI can replace, assist, or cannot replace.<br>Also include the difference between QA and QC, and where static testing fits. |
-| CA-14 | 18:14 24/09/2026 | S2 | hãy làm requirement 2 |
-| CA-15 | 18:16 24/09/2026 | S3 | mindmap chỉ nên là 1 hình thôi |
-| CA-16 | 22:50 24/09/2026 | S2 | phần bảng 2.4 là ở đâu yêu cầu vậy |
-| CA-17 | 22:55 24/09/2026 | S2 | là sao tôi vẫn chưa hiểu dòng đó lắm |
-| CA-18 | 23:00 24/09/2026 | S2 | bạn hãy đóng giả việc viết prompt và điền vào phần đó. Bạn hãy giúp tôi tạo file log prompt để ghi lại |
-| CA-19 | 23:08 24/09/2026 | S2 | nên định dạng output của prompt như nào để dễ xem |
-| CA-20 | 23:13 24/09/2026 | S2 | bạn nghĩ yêu cầu có phải là đưa prompt vào AI giải thích rồi tìm không, nếu như vậy thì khá dài, dài hơn cả các yêu cầu kia nhưng nó chỉ có 20 điểm |
-| CA-21 | 23:15 24/09/2026 | S2 | bạn hãy chỉnh lại giúp tôi phần đó |
-| CA-22 | 23:18 24/09/2026 | S2 | hãy bỏ d1,2,3 và chuyển thành 2 cái duy nhất |
-| CA-23 | 23:26 24/09/2026 | S2 | model GPT-5.6 Luna., bạn giúp tôi điền giờ và giúp tôi đánh giá các điểm như yêu cầu |
-| CA-24 | 23:39 24/09/2026 | S2 | tại sao lại có cái này 2-B03 (follow-up for D01–D03, D07, D08, D10–D14, D18–D20) – `[HH:MM dd/mm/yyyy]` – ChatGPT (GPT-5.6 Luna) |
-| CA-25 | 23:41 24/09/2026 | S2 | tôi mới thêm vào rồi đó |
-| CA-26 | 23:45 24/09/2026 | S2 | rồi đó |
-| CA-27 | 23:48 24/09/2026 | S2 | bạn tự động điền giờ đi, khỏi commit |
-| CA-28 | 23:49 24/09/2026 | S2 | đúng format luôn không có khoảng |
-| CA-29 | 23:50 24/09/2026 | S2 | bạn ghi đại đi, lấy giờ đầu tiên trong chat |
-| CA-30 | 23:58 24/09/2026 | S2 | bạn hãy fake giúp tôi phần prompt và phần output để có thể ra được phần requirement 2 |
-| CA-31 | 00:00 25/09/2026 | S2 | ý tôi là phần prompt để có thể ra được cái phần report của requirement trong @HW01/HW01_Report.md |
-| CA-32 | 00:09 25/09/2026 | S2 | nhưng yêu cầu là phải giữ nguyên input, không được paraphase. |
-| CA-33 | 00:11 25/09/2026 | S2 | tiếp tục làm requirement 3 |
-| CA-34 | 00:30 25/09/2026 | S2 | tôi QA cho remote máy lạnh được không |
-| CA-35 | 23:16 26/09/2026 | S4 | Choose a SPECIFIC household device (fan / water filter / rice cooker / smart<br>bulb...).<br>Submit 1 photo of THE DEVICE + your student ID card in the SAME frame.<br>Declare brand, model, year, serial number (mask the middle 4 chars)<br>Design 12 test cases Objective / Input / Steps / Expected / Actual / Verdict).Clarification: 15 test cases total. Execute and record videos for ≥ 5 out of<br>the 15 (not all 15 need videos). Also aim to find ≥ 5 defects from the device during execution.<br><br>tôi nghĩ tôi sẽ chọn máy lạnh có điều khiển từ xa, brand là casper. |
-| CA-36 | 23:19 26/09/2026 | S4 | hay chuyển thành quạt máy đi, quạt máy chỉ có tính năng chọn 3 chế độ speed, có nút để máy quạt quay hoặc không quay |
-| CA-37 | 23:24 26/09/2026 | S4 | đây là prompt<br>I am testing a physical household electric fan: senko B813, manufactured 2014,<br>standing fan. Controls: 3 speed piano keys + Off / rotary knob,<br>oscillation <push-pull button>. Other adjustments: no.<br>Design 15 black-box test cases for this device. For each: ID, Objective, Preconditions,<br>Input, Steps, Expected Result. Cover functional behavior, speed modes, oscillation,<br>usability, reliability and safety. Format as a table.<br><br>đây là kết quả<br>[followed by the verbatim R3-T01 output, logged in entry R3-T01] |
-| CA-38 | 23:29 26/09/2026 | S4 | quạt này là núm vặn xoay tốc độ |
-| CA-39 | 23:33 26/09/2026 | S4 | bạn hãy đưa tôi lại prompt đúng với đó để tôi đưa lại vào chatgpt vì có yêu cầu chụp hình minh chứng |
-| CA-40 | 23:34 26/09/2026 | S4 | đây là output, bạn hãy chỉnh lại prompt và output<br>[followed by the verbatim R3-T02 output, logged in entry R3-T02] |
-| CA-41 | 23:36 26/09/2026 | S4 | bạn hãy viết giúp tôi luôn phần Student explanation |
-| CA-42 | 23:37 26/09/2026 | S4 | thời gian là 23:37 model là gpt 5.6 luna |
-| CA-43 | 23:38 26/09/2026 | S4 | Giờ gửi của R3-T02, giờ gửi và model của R3-T01 ghi là 23:30 |
-| CA-44 | 23:40 26/09/2026 | S4 | giờ thật nè |
-| CA-45 | 23:41 26/09/2026 | S4 | không cần commit giờ của r3-t01 là 23:26 |
-| CA-46 | 23:41 26/09/2026 | S4 | vậy 23:24 |
-| CA-47 | 23:44 26/09/2026 | S4 | hãy viết giúp tôi phần này |
-| CA-48 | 23:54 26/09/2026 | S4 | commit đi |
-| CA-49 | 23:57 26/09/2026 | S4 | thông tin<br>Student name (printed): Huỳnh Thái Toàn<br>Student ID: 23120175<br>Class / Cohort: CQ2023/31<br>Assignment date:26/09/2026 |
-| CA-50 | 23:57 26/09/2026 | S4 | sử mindmap |
-| CA-51 | 00:01 27/09/2026 | S4 | hãy viết giúp tôi workbook excel |
-| CA-52 | 00:12 27/09/2026 | S4 | tên giảng viên Trần Thị Bích Hạnh và đây là ảnh chụp thiết bị cùng mssv<br>[attached: device photo with student ID card, saved as R3_Device/device_with_student_id.jpg] |
-| CA-53 | 00:18 27/09/2026 | S4 | có cần ảnh nhãn thông số không, đề có yêu cầu không |
-| CA-54 | 00:19 27/09/2026 | S4 | vậy khỏi điền ảnh nhãn thông số |
-| CA-55 | 00:19 27/09/2026 | S4 | serial tôi ghi rồi |
-| CA-56 | 00:20 27/09/2026 | S4 | rồi còn thiếu gì nữa |
-
-## Codex / OpenAI planning session (S1)
-
-`[Student to add: the prompts sent to Codex on 23/09/2026 (assignment reading, PLAN.md, first R1 report draft – commits e7e4d1d to bbbbb2a), with timestamps and outputs, exported from the Codex history.]`

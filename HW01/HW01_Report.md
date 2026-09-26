@@ -390,7 +390,7 @@
 | Model | B813 |
 | Year of manufacture | 2014 |
 | Serial number (middle 4 characters masked) | `[XX****XX]` |
-| Speed control | 4 mechanical piano keys: `0` (Off), `1`, `2`, `3` |
+| Speed control | Rotary knob with marked positions `0` (Off), `1`, `2`, `3` |
 | Oscillation control | Push-pull knob on the motor housing |
 | Other adjustments | None |
 | Test environment | `[room, floor surface, outlet voltage if known, date]` |
@@ -399,10 +399,10 @@
 
 ### 3.2 Test approach
 
-- **State transition testing:** the fan has four speed states (Off, 1, 2, 3) and two oscillation states (on, off). Test cases cover every speed-to-speed transition, including non-adjacent jumps (1 → 3, 3 → 1).
-- **Decision table:** speed × oscillation combinations (TC-09), and power state × key position (TC-12).
-- **Boundary value analysis:** the lowest speed started from standstill (TC-02) and the strongest load, Speed 3 with oscillation, for stability and endurance (TC-13, TC-15).
-- **Error guessing / edge cases:** abnormal key input, knob state changed while the fan is off, mechanical resistance at the head, and guard safety (TC-06, TC-07, TC-10, TC-11, TC-14).
+- **State transition testing:** the fan has four speed states (Off, 1, 2, 3) and two oscillation states (on, off). Because the speed control is a rotary knob, moving between non-adjacent positions (1 → 3, 3 → 1, 3 → 0) passes through the intermediate positions; test cases cover both rotation directions.
+- **Decision table:** speed × oscillation combinations (TC-09), and power state × knob position (TC-12).
+- **Boundary value analysis:** the knob's end positions `0` and `3` (TC-07), the lowest speed started from standstill (TC-02), and the strongest load, Speed 3 with oscillation, for stability and endurance (TC-13, TC-15).
+- **Error guessing / edge cases:** knob resting between two detents, turning beyond the end positions, oscillation changed while the fan is off, mechanical resistance at the head, and guard safety (TC-06, TC-07, TC-10, TC-11, TC-14).
 - **Measurable expected results:** where no manufacturer specification is available, the tester-defined thresholds are stated in the test case so the verdict is not subjective.
 - **Safety limits:** no disassembly, no contact with moving blades, no electrical fault injection. Guard checks are done unplugged.
 
@@ -416,28 +416,28 @@ ChatGPT produced 15 test cases (prompt log entry R3-T01). Each was reviewed agai
 | TC-02 | INCOMPLETE | "Noticeable airflow" is not measurable; it does not check that the blades start from standstill at the lowest speed, which is the hardest start condition for an aged motor. |
 | TC-03 | INCOMPLETE | "Airflow is greater than Speed 1" gives no measurement method. |
 | TC-04 | INCOMPLETE | Same problem as TC-03. |
-| TC-05 | INCOMPLETE | Covers only adjacent transitions; the non-adjacent jumps 1 → 3 and 3 → 1 are missing. |
+| TC-05 | VALID | The sequence 1 → 2 → 3 → 2 → 1 matches how a rotary knob is operated. |
 | TC-06 | VALID | Covers Off from every speed. |
 | TC-07 | INCOMPLETE | Assumes "push down = on" without a source; no sweep angle or period is checked. |
 | TC-08 | INCOMPLETE | Same assumption as TC-07. |
 | TC-09 | VALID | Speed × oscillation combination is covered. |
 | TC-10 | INCOMPLETE | Classified as usability instead of safety; "excessive rocking" is undefined. |
-| TC-11 | INCOMPLETE | Pass criterion ("without excessive force") is subjective; label legibility is not checked. |
+| TC-11 | INCOMPLETE | Refers to "speed buttons", but the fan has a rotary knob; pass criterion ("without excessive force") is subjective; label legibility is not checked. |
 | TC-12 | INCOMPLETE | "Excessive sparking" cannot be observed from outside a closed switch, which contradicts the output's own black-box statement. |
 | TC-13 | VALID | Repeated oscillation cycles are a reasonable reliability check. |
-| TC-14 | INVALID | The steps leave Speed 2 latched, but the expected result assumes the control is at Off. On a mechanical piano-key fan the latched key stays down when power is lost, so the fan restarts at Speed 2 when power returns. |
+| TC-14 | INVALID | The steps leave the control at Speed 2, but the expected result assumes it is at Off. A mechanical rotary knob stays at position 2 when power is lost, so the fan restarts at Speed 2 when power returns. |
 | TC-15 | INCOMPLETE | "Several hours" and "abnormal overheating" are unbounded and cannot give a verdict. |
 
-**Summary:** VALID 4/15 (26.7%), INVALID 1/15 (6.6%), INCOMPLETE 10/15 (66.7%); total 100%.
+**Summary:** VALID 5/15 (33.3%), INVALID 1/15 (6.7%), INCOMPLETE 9/15 (60.0%); total 100%.
 
-Other issues in the output: it accepted the contradictory control description "3 speed piano keys + Off / rotary knob" without asking which one the fan has, and it claimed the design is "consistent with common mechanical fan designs" with an unverifiable citation marker.
+Other issues in the output: the prompt described the control ambiguously ("3 speed piano keys + Off / rotary knob"). ChatGPT did not ask which one the fan has; it silently chose piano keys ("Press Speed 1", "speed buttons"), while the actual fan has a rotary knob. It also claimed the design is "consistent with common mechanical fan designs" with an unverifiable citation marker.
 
 ### 3.4 Edge cases missed by the AI
 
 | Final TC | Edge case | Why the AI missed it |
 |---|---|---|
-| TC-06 | Two speed keys pressed at the same time | `[Student explanation]` |
-| TC-07 | A speed key pressed only halfway (not latched) | `[Student explanation]` |
+| TC-06 | Speed knob left between two detents | `[Student explanation]` |
+| TC-07 | Speed knob turned beyond its end positions `0` and `3` | `[Student explanation]` |
 | TC-10 | Oscillation knob changed while the fan is off | `[Student explanation]` |
 | TC-11 | Head held or turned by hand while oscillating | `[Student explanation]` |
 | TC-14 | Finger access through the front guard | `[Student explanation]` |
@@ -450,18 +450,18 @@ Verdict values: PASS, FAIL, NOT RUN. Test cases that have not been executed are 
 
 | ID | Objective | Preconditions | Input | Steps | Expected result | Actual result | Verdict | Technique | Edge (AI-missed) | Evidence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| TC-01 | Controls are identifiable and labels legible | Fan unplugged | Visual inspection, one press of each key | 1. Without the manual, identify Off, 1, 2, 3 and the oscillation knob.<br>2. Read each label from 1 m.<br>3. Press each key once. | Every key and the knob have a readable label or symbol; each key latches with one press and only one key stays down. | NOT RUN | NOT RUN | Usability | No | – |
-| TC-02 | Lowest speed starts from standstill | Fan plugged in, blades fully stopped for ≥ 5 min, key `0` down | Key `1` | 1. Press `1`.<br>2. Start stopwatch.<br>3. Stop it when blades reach steady rotation. | Blades start unaided (no hand push) and reach steady rotation within 5 s. Start time recorded. | NOT RUN | NOT RUN | BVA | No | – |
-| TC-03 | Speeds are distinct and increasing | Fan running, oscillation off, paper strip hung 1 m in front of the guard | Keys `1`, `2`, `3` | 1. Run 30 s at each speed.<br>2. Record the strip deflection and the sound level (phone app, 1 m).<br>3. Repeat once. | Deflection and sound level increase strictly from 1 to 2 to 3. | NOT RUN | NOT RUN | EP | No | – |
-| TC-04 | Every speed-to-speed transition works | Fan running at `1` | 1→2, 2→3, 3→2, 2→1, 1→3, 3→1 | 1. Perform each transition.<br>2. After each press, check which key is down and observe the speed. | The pressed key latches, the previous key releases, and the speed changes to the selected level with no stop, hum or stall. | NOT RUN | NOT RUN | State transition | No | – |
-| TC-05 | Off from each speed and coast-down | Fan running | `0` from `1`, `2`, `3` | 1. At each speed press `0`.<br>2. Time until the blades stop. | The latched speed key releases, the motor is de-energised, the blades coast to a stop; times recorded and longer for higher speeds. | NOT RUN | NOT RUN | State transition | No | – |
-| TC-06 | Two speed keys pressed simultaneously | Fan at `0` | `1` + `3` pressed together; then `2` + `3` | 1. Press both keys at the same instant.<br>2. Check which keys stay down.<br>3. Observe the motor for 10 s. | Only one key remains latched (mechanical interlock) and the fan runs steadily at that speed; no two keys are down, no hum or stall. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
-| TC-07 | Half-pressed speed key | Fan at `0` | Key `2` pressed to about half travel, held 3 s, released | 1. Press `2` halfway and hold.<br>2. Release without latching.<br>3. Repeat while the fan runs at `1`. | The fan does not run intermittently; after release it returns to its previous state (Off, or Speed 1) with no flicker in speed. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
+| TC-01 | Controls are identifiable and labels legible | Fan unplugged | Visual inspection; turn the speed knob through every position | 1. Without the manual, identify the Off, 1, 2, 3 marks and the oscillation knob.<br>2. Read each mark and the knob pointer from 1 m.<br>3. Turn the speed knob through every position. | Every position mark and the pointer are readable; each position has a distinct detent (click) so the user can feel where it stops. | NOT RUN | NOT RUN | Usability | No | – |
+| TC-02 | Lowest speed starts from standstill | Fan plugged in, blades fully stopped for ≥ 5 min, knob at `0` | Knob to `1` | 1. Turn the knob to `1`.<br>2. Start stopwatch.<br>3. Stop it when blades reach steady rotation. | Blades start unaided (no hand push) and reach steady rotation within 5 s. Start time recorded. | NOT RUN | NOT RUN | BVA | No | – |
+| TC-03 | Speeds are distinct and increasing | Fan running, oscillation off, paper strip hung 1 m in front of the guard | Knob at `1`, `2`, `3` | 1. Run 30 s at each speed.<br>2. Record the strip deflection and the sound level (phone app, 1 m).<br>3. Repeat once. | Deflection and sound level increase strictly from 1 to 2 to 3. | NOT RUN | NOT RUN | EP | No | – |
+| TC-04 | Speed transitions in both rotation directions | Fan running at `1` | 1→2→3, then 3→2→1; 1→3 and 3→1 in one continuous turn | 1. Turn step by step up, then down, pausing 10 s at each position.<br>2. Turn 1→3 and 3→1 in one continuous movement.<br>3. Observe the speed after each stop. | The speed always matches the position the knob stops at, with no stop, hum or stall during the turn. | NOT RUN | NOT RUN | State transition | No | – |
+| TC-05 | Off from each speed and coast-down | Fan running | Knob to `0` from `1`, `2`, `3` | 1. At each speed turn the knob to `0`.<br>2. Time until the blades stop. | The motor is de-energised as soon as the knob reaches `0`; the blades coast to a stop; times recorded and longer for higher speeds. | NOT RUN | NOT RUN | State transition | No | – |
+| TC-06 | Knob left between two detents | Fan at `0` | Knob stopped halfway between `0`–`1`, `1`–`2`, `2`–`3` | 1. Turn the knob slowly and stop midway between two marks.<br>2. Release it and observe the knob and the motor for 10 s. | The knob snaps to one of the two marked positions, or the fan runs steadily at one of the two speeds; no intermittent start/stop, hum or stall. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
+| TC-07 | Knob turned beyond its end positions | Fan at `3` | Gentle extra turn past `3`; then from `0`, gentle turn backwards past `0` | 1. At `3`, keep turning gently in the same direction.<br>2. At `0`, turn gently in the opposite direction.<br>3. Observe the knob and the fan. | The knob behaves as marked on the panel: it either stops firmly at the end mark or moves to the next marked position. It never rests at an unmarked position, and the fan speed always matches the marked position. | NOT RUN | NOT RUN | BVA | **Yes** | – |
 | TC-08 | Oscillation on/off, sweep angle and period | Fan at `2`, oscillation off, tape marks on the floor for the head direction | Oscillation knob | 1. Toggle oscillation on.<br>2. Time three full sweeps.<br>3. Mark both end positions and measure the angle.<br>4. Toggle off. | Head sweeps smoothly and symmetrically; period consistent across the three sweeps (± 1 s); stops within one sweep after toggling off. Angle and period recorded. | NOT RUN | NOT RUN | State transition | No | – |
 | TC-09 | Oscillation at each speed | Oscillation on | `1`, `2`, `3` | 1. Run one full sweep at each speed.<br>2. Listen for clicking or grinding. | Oscillation continues at every speed with no sticking, stopping or grinding noise. | NOT RUN | NOT RUN | Decision table | No | – |
-| TC-10 | Oscillation set while the fan is off | Fan at `0`, oscillation off | Oscillation knob on, then key `1` | 1. With the fan off, set oscillation on.<br>2. Confirm the motor does not start.<br>3. Press `1`. | Changing the knob does not start the motor; after pressing `1`, the fan runs and oscillates immediately. | NOT RUN | NOT RUN | State transition | **Yes** | – |
+| TC-10 | Oscillation set while the fan is off | Fan at `0`, oscillation off | Oscillation knob on, then speed knob to `1` | 1. With the fan off, set oscillation on.<br>2. Confirm the motor does not start.<br>3. Turn the speed knob to `1`. | Changing the oscillation knob does not start the motor; after turning to `1`, the fan runs and oscillates immediately. | NOT RUN | NOT RUN | State transition | **Yes** | – |
 | TC-11 | Head held or turned by hand | Fan at `1`, hand on the rear motor housing only (never the guard) | Gentle hold for 2 s during oscillation; gentle turn with oscillation off | 1. With oscillation on, hold the head still for 2 s, then release.<br>2. With oscillation off, turn the head 20° and release. | Step 1: the gear slips without grinding and oscillation resumes after release. Step 2: the head stays at the new position. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
-| TC-12 | Behaviour after power interruption | Fan at `2` | Unplug 10 s, plug in; repeat with key `0` down | 1. With `2` latched, unplug and replug.<br>2. Press `0`, unplug and replug. | Step 1: the fan restarts at Speed 2 as soon as power returns (key stays latched). Step 2: the fan stays off. | NOT RUN | NOT RUN | Decision table | No (corrects AI TC-14) | – |
+| TC-12 | Behaviour after power interruption | Fan at `2` | Unplug 10 s, plug in; repeat with knob at `0` | 1. With the knob at `2`, unplug and replug.<br>2. Turn the knob to `0`, unplug and replug. | Step 1: the fan restarts at Speed 2 as soon as power returns (the knob stays at `2`). Step 2: the fan stays off. | NOT RUN | NOT RUN | Decision table | No (corrects AI TC-14) | – |
 | TC-13 | Stability at maximum load | Level floor, tape around the base | `3` + oscillation on, 5 min | 1. Run for 5 min.<br>2. Measure any base displacement against the tape. | No tipping or rocking; the base moves less than 1 cm. | NOT RUN | NOT RUN | BVA | No | – |
 | TC-14 | Finger cannot reach the blades | Fan unplugged, blades stopped | Ruler; finger test at the front and rear guard | 1. Measure the largest gap in the front and rear guard.<br>2. Try to touch a blade with a fingertip through the gap.<br>3. Pull the guard clips gently by hand. | A fingertip cannot reach a blade; the guard stays closed when pulled by hand. | NOT RUN | NOT RUN | Error guessing | **Yes** | – |
 | TC-15 | Endurance for 60 min | Clear area, room temperature recorded | `3` + oscillation on, 60 min | 1. Run 60 min.<br>2. At 0, 30 and 60 min record speed, oscillation, noise, and whether the motor housing and cord can be touched comfortably. | Continuous operation and oscillation; no burning smell or smoke; housing and cord warm but comfortable to touch; noise level stable. | NOT RUN | NOT RUN | Reliability | No | – |

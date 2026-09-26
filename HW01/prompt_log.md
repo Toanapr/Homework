@@ -1,6 +1,6 @@
 # HW01 – Prompt Log (Appendix A)
 
-- **Student:** `[Full name – StudentID]`
+- **Student:** Huỳnh Thái Toàn – 23120175
 - **Timestamp format:** `HH:MM dd/mm/yyyy` (local time, UTC+7).
 - **Rule:** every prompt sent to any AI tool is recorded verbatim with its full, unedited output.
 

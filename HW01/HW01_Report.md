@@ -506,11 +506,11 @@ Prohibited category (not AI-generated): the device photo with my student ID card
 
 | Field | Value |
 |---|---|
-| Student name (printed) | `[Full name]` |
-| Student ID | `[StudentID]` |
-| Class / Cohort | `[Class]` |
+| Student name (printed) | Huỳnh Thái Toàn |
+| Student ID | 23120175 |
+| Class / Cohort | CQ2023/31 |
 | Assignment ID | HW01 (HW01AI) |
-| Assignment date | `[Submission date]` |
+| Assignment date | 26/09/2026 |
 | AI tool(s) used | ChatGPT (GPT-5.6 Luna); Cursor Agent (Claude Opus 5.5); Codex (OpenAI) |
 | AI used | [x] Yes  [ ] No |
 

@@ -442,13 +442,15 @@ None of the following cases appear in R3-T02.
 
 | Final TC | Edge case | Why the AI missed it |
 |---|---|---|
-| TC-06 | Speed knob left between two detents | `[Student explanation]` |
-| TC-07 | Speed knob turned beyond its end positions `0` and `3` | `[Student explanation]` |
-| TC-10 | Oscillation knob changed while the fan is off | `[Student explanation]` |
-| TC-11 | Head held or turned by hand while oscillating | `[Student explanation]` |
-| TC-12 | Power interruption with the knob left at a speed position | `[Student explanation]` |
+| TC-06 | Speed knob left between two detents | The prompt listed four discrete positions, so ChatGPT modelled the knob as four valid states and only tested those. A physical knob can also rest between marks; this invalid input partition exists on the device but not in the text description, so the AI never derived it. |
+| TC-07 | Speed knob turned beyond its end positions `0` and `3` | ChatGPT treated "0–3" as the complete input domain and tested values inside it, but not outside the boundaries. Whether the knob stops at `3` or wraps to `0` is not in the prompt, and the AI did not ask; boundary value analysis requires testing just beyond each end. |
+| TC-10 | Oscillation knob changed while the fan is off | Every oscillation case in R3-T02 has the precondition "fan running". ChatGPT tested the two controls in one order only (speed first, then oscillation) and did not enumerate the combination speed `0` + oscillation on, which a user can easily set. |
+| TC-11 | Head held or turned by hand while oscillating | ChatGPT deliberately kept safety cases "observation-based" and avoided physical interaction with the fan. It also only considered inputs through the two controls, not external forces on the head, such as a child or a curtain stopping it, which the oscillation gear must tolerate. |
+| TC-12 | Power interruption with the knob left at a speed position | ChatGPT considered only the user controls as inputs, not the environment (mains power). Because a mechanical knob keeps its position, the fan restarts on its own when power returns, for example during the night or while someone is cleaning it. This risk only appears when the tester thinks about the device's state after an outage. |
 
 Evidence: screenshots of the R3-T02 conversation — `R3_Device/ai_output_R3-T02.png`.
+
+The explanations above were drafted with Cursor (prompt log R3-C03) and reviewed by the student.
 
 ### 3.5 Final test cases
 

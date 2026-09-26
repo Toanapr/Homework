@@ -448,3 +448,8 @@ For a physical appliance, safety cases should be **observation-based**: don't de
 
 **Output:** re-evaluation of report sections 3.3–3.5 against R3-T02. Reviewed and edited by the student before submission.
 
+### R3-C03 – 23:36 26/09/2026 – Cursor (Claude)
+
+**Prompt:** "bạn hãy viết giúp tôi luôn phần Student explanation"
+
+**Output:** the "Why the AI missed it" explanations for TC-06, TC-07, TC-10, TC-11 and TC-12 in report section 3.4. Reviewed by the student before submission.

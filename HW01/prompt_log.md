@@ -529,6 +529,7 @@ Sessions: S1 = planning session on 23/09/2026 (Codex/OpenAI, see below); S2 = R1
 | CA-48 | 23:54 26/09/2026 | S4 | commit đi |
 | CA-49 | 23:57 26/09/2026 | S4 | thông tin<br>Student name (printed): Huỳnh Thái Toàn<br>Student ID: 23120175<br>Class / Cohort: CQ2023/31<br>Assignment date:26/09/2026 |
 | CA-50 | 23:57 26/09/2026 | S4 | sử mindmap |
+| CA-51 | 00:01 27/09/2026 | S4 | hãy viết giúp tôi workbook excel |
 
 ## Codex / OpenAI planning session (S1)
 

@@ -336,7 +336,7 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 
 ## Requirement 3 – Physical product test cases
 
-### R3-T01 (initial 15 test cases) – `[HH:MM] 26/09/2026` – ChatGPT (`[model]`)
+### R3-T01 (initial 15 test cases) – `[HH:MM] 26/09/2026` – ChatGPT (GPT-5.6 Luna)
 
 **Prompt:**
 

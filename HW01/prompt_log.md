@@ -392,7 +392,7 @@ For a **black-box testing assignment**, these are deliberately based on observab
 
 **Output:** draft of report sections 3.1–3.6 (critique of R3-T01, AI-missed edge cases, refined 15 test cases marked NOT RUN). Reviewed and edited by the student before submission.
 
-### R3-T02 (initial 15 test cases, corrected prompt) – `[HH:MM] 26/09/2026` – ChatGPT (`[model]`)
+### R3-T02 (initial 15 test cases, corrected prompt) – `[HH:MM] 26/09/2026` – ChatGPT (GPT-5.6 Luna)
 
 **Prompt:**
 

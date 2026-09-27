@@ -1,0 +1,542 @@
+* commit 3c61ca9cc987bf5d4da3942dd34958b7c2c1761d
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 23:29:11 2026 +0700
+| 
+|     feat(hw01): add HW01 report and supporting documents for AI compliance
+|     
+|     Introduced a comprehensive report detailing QA/QC job market analysis, software defects, and physical product testing. Included a PDF version of the report and removed the outdated PLAN.md file. Updated AI forms for compliance documentation.
+| 
+|  HW01/{HW01_Report.md => 23120175_HW01_AI_100.md}  |   6 -
+|  HW01/23120175_HW01_AI_100.pdf                     | Bin 0 -> 19692817 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 50382 -> 55079 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 48204 -> 52847 bytes
+|  HW01/PLAN.md                                      | 136 --------------------
+|  5 files changed, 142 deletions(-)
+| 
+* commit ff6212ac5ad4d67b257accfd7b99f20d91001a75
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 22:51:52 2026 +0700
+| 
+|     docs(hw01): align the AI-02 disclosure with the report
+|     
+|     Record the remaining fan defects, verified AI errors, and self-assessment, and state that Cursor formatted the observed results into the report, workbook, and issues.
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 32277 -> 54938 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 28444 -> 50382 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 26340 -> 48204 bytes
+|  HW01/HW01_Report.md                               | 172 +++++++++++---------
+|  HW01/HW01_Test_Workbook.xlsx                      | Bin 13867 -> 16306 bytes
+|  HW01/R3_Defects/DF-01_issues_page.png             | Bin 0 -> 460377 bytes
+|  HW01/R3_Defects/issues_page.png                   | Bin 0 -> 205774 bytes
+|  HW01/prompt_log.md                                |  64 +++++++-
+|  8 files changed, 160 insertions(+), 76 deletions(-)
+|     
+| *   commit 740dc71f30a539ffd629630d1ccd428b7d9eddba
+|/|\  Merge: 19bdc1e 38ab55f a6f63b9
+| | | Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| | | Date:   Sun Sep 27 01:31:08 2026 +0700
+| | | 
+| | |     On hw01: WIP on hw01 before switching to main at e7e4d1d
+| | | 
+| | * commit a6f63b90ab50f3c7eea85bd86996aec98aca92e2
+| |   Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| |   Date:   Sun Sep 27 01:31:08 2026 +0700
+| |   
+| |       untracked files on hw01: 19bdc1e docs(hw01): update HW01_Report.md and prompt_log.md for clarity and completeness
+| | 
+| * commit 38ab55f455df3980fe652ca5cba824ad7f5df7c5
+|/  Author: Toan Huynh <toanhuynh.apr@gmail.com>
+|   Date:   Sun Sep 27 01:31:08 2026 +0700
+|   
+|       index on hw01: 19bdc1e docs(hw01): update HW01_Report.md and prompt_log.md for clarity and completeness
+| 
+* commit 19bdc1e9c252888ea5c760e2f0acce798c6651d7
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:31:26 2026 +0700
+| 
+|     docs(hw01): update HW01_Report.md and prompt_log.md for clarity and completeness
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 32263 -> 32277 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 28405 -> 28444 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 26369 -> 26340 bytes
+|  HW01/HW01_Report.md                               |  40 ++++-----
+|  HW01/prompt_log.md                                |  91 +-------------------
+|  5 files changed, 21 insertions(+), 110 deletions(-)
+| 
+* commit 72cccd7cc1e63cda38e8779afb1d5f6e49845e0e
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:21:06 2026 +0700
+| 
+|     docs(hw01): log Cursor prompts CA-53 to CA-56
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 2 +-
+|  HW01/prompt_log.md  | 4 ++++
+|  2 files changed, 5 insertions(+), 1 deletion(-)
+| 
+* commit 15c1113de23f0a88dbeb148ec087c157b24abeab
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:19:50 2026 +0700
+| 
+|     docs(hw01): declare masked serial number and test environment for Senko B813 (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 32d68bc33d75dbcc11a74292ed560192634b2fc6
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:15:03 2026 +0700
+| 
+|     feat(hw01): add new device photo with student ID for R3 documentation
+| 
+|  .../{IMG20260927000228.jpg => device_with_student_id.jpg} | Bin
+|  1 file changed, 0 insertions(+), 0 deletions(-)
+| 
+* commit 3e6e5e9e4ab3709e4bbaf43897db9d80ae6b04ee
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:14:29 2026 +0700
+| 
+|     chore(hw01): remove old device photo and add new image (IMG20260927000228) for R3 documentation
+| 
+|  HW01/R3_Device/IMG20260927000228.jpg      | Bin 0 -> 4546793 bytes
+|  HW01/R3_Device/device_with_student_id.jpg | Bin 312307 -> 0 bytes
+|  2 files changed, 0 insertions(+), 0 deletions(-)
+| 
+* commit cf5d9ccba3454d41272171ccc18147ee7056d0fc
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:12:36 2026 +0700
+| 
+|     evidence(hw01): add device photo with student ID card and instructor name in AI-02/AI-03/AI-05 (R3, AI-3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 32226 -> 32263 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 28369 -> 28405 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 26329 -> 26369 bytes
+|  HW01/R3_Device/device_with_student_id.jpg         | Bin 0 -> 312307 bytes
+|  HW01/prompt_log.md                                |   1 +
+|  5 files changed, 1 insertion(+)
+| 
+* commit 660ae5d548eed47fae0ce1df6615b55acdae9101
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:02:14 2026 +0700
+| 
+|     docs(hw01): disclose Excel workbook as AI artifact #14 in audit, prompt log and AI-02/AI-03 (AI-1, AI-2)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 31907 -> 32226 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 28328 -> 28369 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 26329 -> 26329 bytes
+|  HW01/HW01_Report.md                               |  16 ++++++++++++----
+|  HW01/prompt_log.md                                |   1 +
+|  5 files changed, 13 insertions(+), 4 deletions(-)
+| 
+* commit e610c4135df8258b2098ec5796c96c40810b7c54
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:02:04 2026 +0700
+| 
+|     test(hw01): add Excel workbook (Test Summary, Test Cases, Checklist, Defects) and copy test summary into report (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md          |  24 ++++++++++++++++++++++++
+|  HW01/HW01_Test_Workbook.xlsx | Bin 0 -> 13867 bytes
+|  2 files changed, 24 insertions(+)
+| 
+* commit 9f2afe2232bb8673298131976316e88da9950558
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sun Sep 27 00:01:05 2026 +0700
+| 
+|     docs(hw01): add R1 mindmap critique with 3 syllabus-verified mistakes and corrected mindmap; update AI audit artifact #1 (R1, G9.1)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 31750 -> 31907 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 28265 -> 28328 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 26340 -> 26329 bytes
+|  HW01/HW01_Report.md                               |  44 +++++++---
+|  HW01/R1_Mindmap/QAQC_2026_Mindmap_Corrected.mmd   |  86 ++++++++++++++++++++
+|  HW01/R1_Mindmap/QAQC_2026_Mindmap_Corrected.png   | Bin 0 -> 1503754 bytes
+|  HW01/prompt_log.md                                |   5 +-
+|  7 files changed, 124 insertions(+), 11 deletions(-)
+| 
+* commit cd069a3daedac323c94b3d5e3a8a63104f9f4914
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:57:35 2026 +0700
+| 
+|     docs(hw01): add student details to report, prompt log and AI-02/AI-03/AI-05 forms
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 31647 -> 31750 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 28207 -> 28265 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 26289 -> 26340 bytes
+|  HW01/HW01_Report.md                               |   8 ++++----
+|  HW01/prompt_log.md                                |   2 +-
+|  5 files changed, 5 insertions(+), 5 deletions(-)
+| 
+* commit 416ec49f54c009e5b4e3f0fbe2639a31cb33f6bc
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:54:58 2026 +0700
+| 
+|     docs(hw01): fill AI-02/AI-03/AI-05 templates, add AI audit, critique, disclosure and full Cursor prompt log (AI-1..AI-3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  ...] - FIT@HCMUS - AI Audit Report_En - HW01.docx | Bin 0 -> 31647 bytes
+|  ... FIT@HCMUS - AI Disclosure Form_En - HW01.docx | Bin 0 -> 28207 bytes
+|  ...IT@HCMUS - AI Privacy Checklist_En - HW01.docx | Bin 0 -> 26289 bytes
+|  HW01/HW01_Report.md                               | 153 ++++++++++++++++++++
+|  HW01/R3_Device/ai_output_R3-T02.png               | Bin 0 -> 867339 bytes
+|  HW01/prompt_log.md                                |  81 ++++++++++-
+|  6 files changed, 231 insertions(+), 3 deletions(-)
+| 
+* commit b18c4f897a6f8d85ce5849a3ccaaaee69a60887c
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:40:46 2026 +0700
+| 
+|     docs(hw01): record R3-T02 timestamp 23:33 with screenshot evidence (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/R3_Device/R3-T02_timestamp.png | Bin 0 -> 80142 bytes
+|  HW01/prompt_log.md                  |   4 +++-
+|  2 files changed, 3 insertions(+), 1 deletion(-)
+| 
+* commit 505bbab324a75cbb7e956b5bc44559a64220a8b8
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:39:20 2026 +0700
+| 
+|     docs(hw01): record ChatGPT model for R3-T01 prompt log entry (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/prompt_log.md | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 08044a2a1e6b3778a47ebaa3ed45fac29831383d
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:37:58 2026 +0700
+| 
+|     docs(hw01): record ChatGPT model for R3-T02 prompt log entry (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/prompt_log.md | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 14b4efe49e25198db977ecdabcae7f27d2184a3f
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:36:19 2026 +0700
+| 
+|     docs(hw01): add explanations of why ChatGPT missed the five R3 edge cases (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 12 +++++++-----
+|  HW01/prompt_log.md  |  5 +++++
+|  2 files changed, 12 insertions(+), 5 deletions(-)
+| 
+* commit f2a856f9088d88cb6db2ae48f26309bd13ebfb26
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:34:43 2026 +0700
+| 
+|     test(hw01): log corrected R3 ChatGPT prompt (R3-T02) and re-evaluate AI output and missed edge cases (R3)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 56 +++++++++++++++++++++++++++----------------------
+|  HW01/prompt_log.md  | 58 ++++++++++++++++++++++++++++++++++++++++++++++++++-
+|  2 files changed, 88 insertions(+), 26 deletions(-)
+| 
+* commit b36f3f44e1bbd280e76a476b1699e6a78a60a8c9
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:30:15 2026 +0700
+| 
+|     test(hw01): adapt R3 test cases to the Senko B813 rotary speed knob (R3, not yet executed)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 42 +++++++++++++++++++++---------------------
+|  1 file changed, 21 insertions(+), 21 deletions(-)
+| 
+* commit 3414a2d2ee1bb6c242e6462498b9d843ff0e531c
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Sat Sep 26 23:25:49 2026 +0700
+| 
+|     test(hw01): log R3 ChatGPT output and draft 15 test cases for Senko B813 fan (R3, not yet executed)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 97 +++++++++++++++++++++++++++++++++++++++++++++++++++
+|  HW01/prompt_log.md  | 58 ++++++++++++++++++++++++++++++
+|  2 files changed, 155 insertions(+)
+| 
+* commit 0839c79c9157ba805decbd5bf69f0ed0116c3ce9
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Fri Sep 25 00:11:23 2026 +0700
+| 
+|     docs(hw01): update timestamps in prompt log for R2-B01, R2-B02, R2-B03, and R2-B04; correct format and ensure consistency
+| 
+|  HW01/HW01_Report.md | 20 ++++++++++----------
+|  HW01/prompt_log.md  | 22 +++++++---------------
+|  2 files changed, 17 insertions(+), 25 deletions(-)
+| 
+* commit 42aeaab391b0874cc7e59f00f1f6d6f8f74e109b
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 23:46:33 2026 +0700
+| 
+|     docs(hw01): verify R2 follow-up B04; finalize AI-error results (10/20 confirmed)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 24 +++++++++++-----------
+|  HW01/prompt_log.md  | 55 ++++++++++++++++++++++++++++++++++++++++-----------
+|  2 files changed, 57 insertions(+), 22 deletions(-)
+| 
+* commit a63bd3f8ce80d010b41c3c33c0eacee62c3c517c
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 23:43:01 2026 +0700
+| 
+|     docs(hw01): verify R2 follow-up B03 (3 more AI errors) and add follow-up prompt B04
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md |  6 ++---
+|  HW01/prompt_log.md  | 69 ++++++++++++++++++++++++++++++++++++++++++++++++---
+|  2 files changed, 69 insertions(+), 6 deletions(-)
+| 
+* commit ed2a1a539c89ae936814bc974663a81bdc752177
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 23:29:31 2026 +0700
+| 
+|     docs(hw01): verify R2 batch outputs, record 7 confirmed AI errors, add follow-up prompt B03
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md |  16 ++---
+|  HW01/prompt_log.md  | 173 +++++++++++++++++++++++++++++++++++++++++++++-----
+|  2 files changed, 165 insertions(+), 24 deletions(-)
+| 
+* commit f47f0d75fb3d95faf2ec07c17e65ffd0466bc66f
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 23:19:19 2026 +0700
+| 
+|     docs(hw01): restructure R2 prompt log into two batch prompts (D01–D10, D11–D20)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/prompt_log.md | 590 +++------------------------------------------------
+|  1 file changed, 30 insertions(+), 560 deletions(-)
+| 
+* commit 7f4a744290423ed2451e2c04c8f611fc034f07a0
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 23:16:16 2026 +0700
+| 
+|     docs(hw01): log R2 ChatGPT outputs D01–D03 as blockquotes; batch D04–D20 into two prompts
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/prompt_log.md | 695 ++++++++++++++++++++++++++++++++++++++++++---------
+|  1 file changed, 570 insertions(+), 125 deletions(-)
+| 
+* commit 8624f2d46905553d56cf7eca68ad76eae3b8a1c9
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 23:01:17 2026 +0700
+| 
+|     docs(hw01): add prompt log template with 20 R2 defect prompts
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/prompt_log.md | 192 +++++++++++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 192 insertions(+)
+| 
+* commit a3bb01785800ee19a4d0773b84c03bdfc7c4b88f
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 18:35:39 2026 +0700
+| 
+|     docs(hw01): add R2 – 20 software defects 2022–2025 with verified sources (AI-error table pending student prompts)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/HW01_Report.md | 230 ++++++++++++++++++++++++++++++++++++++++++++++++++
+|  HW01/PLAN.md        |  27 ++++++
+|  2 files changed, 257 insertions(+)
+| 
+* commit 446c243d8bacfdc6cff78836b1568a376e6c49f9
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 18:18:18 2026 +0700
+| 
+|     docs(hw01): merge R1 mindmap into a single image (QAQC_2026_Mindmap)
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/R1_Mindmap/Mindmap_AI_Output.md    |  40 ++++++--------
+|  HW01/R1_Mindmap/QAQC_2026_Mindmap.mmd   |  82 ++++++++++++++++++++++++++++
+|  HW01/R1_Mindmap/QAQC_2026_Mindmap.png   | Bin 0 -> 1438500 bytes
+|  HW01/R1_Mindmap/png/00_overview.png     | Bin 213441 -> 0 bytes
+|  HW01/R1_Mindmap/png/01_test_process.png | Bin 742224 -> 0 bytes
+|  HW01/R1_Mindmap/png/02_qa_qc_static.png | Bin 378661 -> 0 bytes
+|  HW01/R1_Mindmap/png/03_roles.png        | Bin 755239 -> 0 bytes
+|  HW01/R1_Mindmap/png/04_ai_impact.png    | Bin 714332 -> 0 bytes
+|  HW01/R1_Mindmap/src/00_overview.mmd     |  29 ----------
+|  HW01/R1_Mindmap/src/01_test_process.mmd |  86 ------------------------------
+|  HW01/R1_Mindmap/src/02_qa_qc_static.mmd |  45 ----------------
+|  HW01/R1_Mindmap/src/03_roles.mmd        |  83 ----------------------------
+|  HW01/R1_Mindmap/src/04_ai_impact.mmd    |  83 ----------------------------
+|  13 files changed, 98 insertions(+), 350 deletions(-)
+| 
+* commit b98e4693c935258fc340000a9ea4c5c5dc32792c
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 18:12:48 2026 +0700
+| 
+|     docs(hw01): add raw AI-generated QA/QC 2026+ mindmap for R1/G9.1 critique
+|     
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+| 
+|  HW01/R1_Mindmap/Mindmap_AI_Output.md    |  72 +++++++++++++++++++++++++
+|  HW01/R1_Mindmap/png/00_overview.png     | Bin 0 -> 213441 bytes
+|  HW01/R1_Mindmap/png/01_test_process.png | Bin 0 -> 742224 bytes
+|  HW01/R1_Mindmap/png/02_qa_qc_static.png | Bin 0 -> 378661 bytes
+|  HW01/R1_Mindmap/png/03_roles.png        | Bin 0 -> 755239 bytes
+|  HW01/R1_Mindmap/png/04_ai_impact.png    | Bin 0 -> 714332 bytes
+|  HW01/R1_Mindmap/src/00_overview.mmd     |  29 ++++++++++
+|  HW01/R1_Mindmap/src/01_test_process.mmd |  86 ++++++++++++++++++++++++++++++
+|  HW01/R1_Mindmap/src/02_qa_qc_static.mmd |  45 ++++++++++++++++
+|  HW01/R1_Mindmap/src/03_roles.mmd        |  83 ++++++++++++++++++++++++++++
+|  HW01/R1_Mindmap/src/04_ai_impact.mmd    |  83 ++++++++++++++++++++++++++++
+|  11 files changed, 398 insertions(+)
+| 
+* commit b113c6ed600ab138e3826c3a5f2b5d56d12811f2
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 18:03:58 2026 +0700
+| 
+|     docs(hw01): update job postings JP05–JP07 with ITviec links and new screenshots
+| 
+|  HW01/HW01_Report.md           |  56 ++++++++++++++++++++--------------------
+|  HW01/PLAN.md                  |   3 ++-
+|  HW01/R1_Job_Postings/JP05.png | Bin 664319 -> 1769084 bytes
+|  HW01/R1_Job_Postings/JP06.png | Bin 639823 -> 1087979 bytes
+|  HW01/R1_Job_Postings/JP07.png | Bin 658746 -> 1796099 bytes
+|  5 files changed, 30 insertions(+), 29 deletions(-)
+| 
+* commit 587dd9b07ebceb6ec66c725f93e2e5b0a59a327b
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 17:51:54 2026 +0700
+| 
+|     docs(hw01): finalize R1 job postings with unified JP01–JP10 screenshots
+| 
+|  HW01/HW01_Report.md                        | 129 ++++++++++-----------------
+|  HW01/PLAN.md                               |   8 ++
+|  HW01/R1_Job_Postings/JP01.png              | Bin 409253 -> 1402599 bytes
+|  HW01/R1_Job_Postings/JP03.png              | Bin 0 -> 522802 bytes
+|  HW01/R1_Job_Postings/JP03_DXC.png          | Bin 439372 -> 0 bytes
+|  HW01/R1_Job_Postings/JP08.png              | Bin 1676794 -> 1916980 bytes
+|  HW01/R1_Job_Postings/JP08_MoneyForward.png | Bin 1916980 -> 0 bytes
+|  HW01/R1_Job_Postings/JP09.png              | Bin 1653579 -> 1523965 bytes
+|  HW01/R1_Job_Postings/JP09_Brarista.png     | Bin 1523965 -> 0 bytes
+|  9 files changed, 56 insertions(+), 81 deletions(-)
+| 
+* commit 76f676b51bd397c8a58f4ebecf192d6c4d8a3669
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 17:35:27 2026 +0700
+| 
+|     docs(hw01): replace expired JP08/JP09 with current AI-requiring postings (Money Forward, Brarista)
+| 
+|  HW01/HW01_Report.md                        |  42 +++++++++++++--------------
+|  HW01/R1_Job_Postings/JP08_MoneyForward.png | Bin 0 -> 1916980 bytes
+|  HW01/R1_Job_Postings/JP09_Brarista.png     | Bin 0 -> 1523965 bytes
+|  3 files changed, 21 insertions(+), 21 deletions(-)
+| 
+* commit 3c31de3c110a05753cf9da877c73a10c075a1bcf
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 17:27:35 2026 +0700
+| 
+|     docs(hw01): verify JP03 posting date via DXC careers and update R1 evidence notes
+| 
+|  HW01/HW01_Report.md | 139 ++++++++++++++++++++++++--------------------------
+|  1 file changed, 68 insertions(+), 71 deletions(-)
+| 
+* commit 735615453837dd17a3aeb9749bb26afc5b467bd6
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 17:13:54 2026 +0700
+| 
+|     docs(hw01): align R1 posting fields with spec (link, dated screenshot, description, skills, salary, 1–2 sentence AI impact)
+| 
+|  HW01/HW01_Report.md | 107 ++++++++++++++++++++++----------------------------
+|  HW01/PLAN.md        |   2 +-
+|  2 files changed, 47 insertions(+), 62 deletions(-)
+| 
+* commit bbbbb2a350b13af0ebd5567eb1af7755f6db7f9b
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Thu Sep 24 00:19:33 2026 +0700
+| 
+|     docs(hw01): re-fetch R1 links and correct date evidence
+| 
+|  HW01/HW01_Report.md | 59 +++++++++++++++++++++++++++------------------------
+|  1 file changed, 31 insertions(+), 28 deletions(-)
+| 
+* commit 48008449d5875a1e741f2c3f45798e02cf17c75f
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Wed Sep 23 23:52:38 2026 +0700
+| 
+|     docs(hw01): add R1 job market report draft
+| 
+|  HW01/HW01_Report.md | 196 ++++++++++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 196 insertions(+)
+| 
+* commit d304009ead80cb30bbee1a15adc06d4afee9e5a5
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Wed Sep 23 23:52:27 2026 +0700
+| 
+|     evidence(hw01): add collected job posting screenshots
+| 
+|  HW01/R1_Job_Postings/JP01.png     | Bin 0 -> 409253 bytes
+|  HW01/R1_Job_Postings/JP02.png     | Bin 0 -> 453233 bytes
+|  HW01/R1_Job_Postings/JP03_DXC.png | Bin 0 -> 439372 bytes
+|  HW01/R1_Job_Postings/JP04.png     | Bin 0 -> 439032 bytes
+|  HW01/R1_Job_Postings/JP05.png     | Bin 0 -> 664319 bytes
+|  HW01/R1_Job_Postings/JP06.png     | Bin 0 -> 639823 bytes
+|  HW01/R1_Job_Postings/JP07.png     | Bin 0 -> 658746 bytes
+|  HW01/R1_Job_Postings/JP08.png     | Bin 0 -> 1676794 bytes
+|  HW01/R1_Job_Postings/JP09.png     | Bin 0 -> 1653579 bytes
+|  HW01/R1_Job_Postings/JP10.png     | Bin 0 -> 1590817 bytes
+|  10 files changed, 0 insertions(+), 0 deletions(-)
+| 
+* commit 4e2ff2bc7e1d41c90984d852e5f6ece575b447f7
+| Author: Toan Huynh <toanhuynh.apr@gmail.com>
+| Date:   Wed Sep 23 23:52:13 2026 +0700
+| 
+|     docs(hw01): add assignment execution plan
+| 
+|  HW01/PLAN.md | 100 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 100 insertions(+)
+| 
+* commit e7e4d1d810fe3448ae212d54a2905d84a7da1761
+  Author: Toan Huynh <toanhuynh.apr@gmail.com>
+  Date:   Wed Sep 23 23:52:04 2026 +0700
+  
+      chore: track course instructions and source materials
+  
+   .gitignore                                        |   1 +
+   AGENTS.md                                         |  97 ++++++++++++++++++++
+   .../[AI-01] - FIT@HCMUS - AI Agreement_En.docx    | Bin 0 -> 201411 bytes
+   .../[AI-02] - FIT@HCMUS - AI Audit Report_En.docx | Bin 0 -> 32090 bytes
+   ...I-03] - FIT@HCMUS - AI Disclosure Form_En.docx | Bin 0 -> 29770 bytes
+   ... - FIT@HCMUS - AI Reflective Statement_En.docx | Bin 0 -> 30003 bytes
+   ...05] - FIT@HCMUS - AI Privacy Checklist_En.docx | Bin 0 -> 28862 bytes
+   ...FIT@HCMUS - AI Student Acknowledgement_En.docx | Bin 0 -> 28817 bytes
+   .../2026.HW01.Jobs.Defects.PhysicalProduct_En.pdf | Bin 0 -> 471275 bytes
+   assignment/2026.HW02.Domain Testing_En.pdf        | Bin 0 -> 403870 bytes
+   assignment/2026.HW03.GUI Usability_En.pdf         | Bin 0 -> 231854 bytes
+   assignment/2026.HW04.Automation Testing_En.pdf    | Bin 0 -> 463412 bytes
+   assignment/2026.HW05.Performance Testing_En.pdf   | Bin 0 -> 492695 bytes
+   assignment/2026.HW06.API Testing_En.pdf           | Bin 0 -> 455391 bytes
+   assignment/___2026.Homework.Policies.pdf          | Bin 0 -> 169510 bytes
+   15 files changed, 98 insertions(+)

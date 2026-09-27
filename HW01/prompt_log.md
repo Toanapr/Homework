@@ -2,7 +2,7 @@
 
 - **Student:** Huỳnh Thái Toàn – 23120175
 - **Timestamp format:** `HH:MM dd/mm/yyyy` (local time, UTC+7).
-- **Rule:** ChatGPT prompts (R2-B01 to R2-B04, R3-T01, R3-T02) and the R1 mindmap prompt (R1-M01) are recorded verbatim. Cursor session prompts and Codex planning prompts are omitted from this log by student decision.
+- **Rule:** Every prompt used for this assignment is recorded in this log with its timestamp and output.
 
 ## Entry format
 
@@ -345,7 +345,67 @@ Answer each question in 1–2 sentences with one source link. Format as a number
 - D19: VALID – NVD 7.5 and Microsoft CNA 9.3 confirmed via the NVD API; server-side fix in May 2025.
 - D20: VALID – JFSA-2024-001034449 and AC:H match the JFrog advisory and NVD.
 
-**Conclusion after R2-B01 to R2-B04:** confirmed AI errors were found for 10 of the 20 defects (D01, D04, D05, D06, D09, D12, D15, D16, D17, D18). For the other 10 defects, every checked claim across four prompts matched the sources.
+**Conclusion after R2-B01 to R2-B04:** confirmed AI errors were found for 10 of the 20 defects (D01, D04, D05, D06, D09, D12, D15, D16, D17, D18). For the other 10 defects, every checked claim across four prompts matched the sources. Those 10 were asked again in R2-B05.
+
+### R2-B05 (D02, D03, D07, D08, D10, D11, D13, D14, D19, D20) – 22:23 27/09/2026 – Cursor Composer (composer-2.5-fast)
+
+**Prompt:**
+
+```text
+Answer from memory only. Do not use tools, do not open files, and do not browse the web. Reply with only a numbered list of 10 items. No introduction.
+
+For each defect below, write 3–4 sentences: exact date, root cause, key numbers (users/devices and CVSS if any, including who assigned the score), consequences, and the official fix with exact version numbers. End each item with exactly one source URL.
+
+1. Cloudflare outage (21 June 2022)
+2. Rogers Communications outage in Canada (8 July 2022)
+3. Tesla Full Self-Driving Beta recall 23V-085 (16 February 2023)
+4. Progress MOVEit Transfer SQL injection CVE-2023-34362
+5. OpenSSL X.509 email address buffer overflow CVE-2022-3602
+6. XZ Utils backdoor CVE-2024-3094
+7. ChatGPT data exposure incident (20 March 2023)
+8. Mata v. Avianca – lawyers citing ChatGPT-generated cases (2023)
+9. Microsoft 365 Copilot EchoLeak CVE-2025-32711
+10. Vanna.AI prompt injection CVE-2024-5565
+```
+
+**Output (verbatim):**
+
+```text
+1. The Cloudflare outage began on **21 June 2022** (roughly 06:27 UTC) when a planned change to network configuration was deployed across **19** data centers and incorrectly caused critical routes to be withdrawn, producing widespread **HTTP 500** errors for customers using its proxy and related services. Cloudflare attributed the incident to a faulty change-management outcome rather than an external attack, and impact lasted on the order of **~1 hour** for many sites globally. The official remediation was to **roll back** the bad configuration and harden change controls so similar updates could not propagate the same way. **https://blog.cloudflare.com/cloudflare-outage-on-june-21-2022/**
+
+2. Rogers Communications’ nationwide disruption in Canada started on **8 July 2022** when post-maintenance conditions led to failure of route-filtering logic and propagation of invalid **BGP** information in the core, effectively isolating large parts of Rogers’ network from the Internet. Rogers reported on the order of **~12 million** wireless and wireline subscribers affected, with cascading effects on payments, transport systems, and **911** reachability in multiple provinces during the multi-hour outage. The company’s official recovery was full restoration of routing and publishing of a detailed post-incident report with committed customer compensation and network redesign measures (no single “version number” fix in the software sense). **https://about.rogers.com/news-ideas/rogers-2022-service-interruption-report/**
+
+3. NHTSA opened recall **23V-085** on **16 February 2023** for Tesla **Full Self-Driving (Beta)** because the system could behave unsafely at intersections (e.g., traveling straight in turn-only lanes, entering intersections on yellow without sufficient caution, and insufficient response to posted speed limits). The recall covered **362,758** vehicles (2016–2023 Model S/X and 2017–2023 Model 3/Y with FSD Beta or pending install). Consequences included a formal safety recall and mandatory **over-the-air (OTA)** software remedy rather than a physical dealer repair. Tesla’s official fix was delivered via OTA updates to the FSD Beta software (documented in the recall remedy as updated FSD Beta builds rolled out after the recall announcement). **https://www.nhtsa.gov/recalls**
+
+4. **CVE-2023-34362** is a **SQL injection** flaw in Progress **MOVEit Transfer** that attackers (notably the **Cl0p** group) began exploiting in **May 2023**, leading to mass data theft from managed file-transfer deployments worldwide. **NVD** assigned a **CVSS v3.1 base score of 9.8 (Critical)** for this CVE. Consequences included breach notifications across hundreds of organizations, regulatory scrutiny, and emergency incident response for exposed MOVEit instances. Progress’s official fixes were patched releases including **2020.1.11 (or later in the 2020.1 line), 2021.0.7, 2022.0.7, 2022.1.8, and 2023.0.2** (plus subsequent hardening guidance). **https://www.cisa.gov/news-events/alerts/2023/06/07/cisa-adds-one-known-exploited-vulnerability-catalog**
+
+5. **CVE-2022-3602** is a **buffer overflow** in OpenSSL’s parsing of email-address fields inside **X.509 certificate** name constraints, disclosed with fixes on **1 November 2022** (advisory timing; exploitation was considered difficult in many deployments). OpenSSL initially treated one related issue as more severe, then revised severity guidance; **NVD** lists **CVSS v3.1 7.5 (High)** for CVE-2022-3602 (score assigned via the NVD analysis process). Consequences were urgent patching cycles for TLS stacks, distro rebuilds, and certificate-handling review across the ecosystem. The official OpenSSL remediated versions were **3.0.7**, **1.1.1s**, and **1.0.2zg** (for premium-support 1.0.2 users). **https://www.openssl.org/news/secadv/20221101.txt**
+
+6. **CVE-2024-3094** documents a **supply-chain backdoor** inserted into **xz Utils/liblzma** releases **5.6.0** and **5.6.1**, discovered **29 March 2024** after abnormal latency observations (widely credited to Microsoft’s **Andres Freund**). **NVD** assigned **CVSS v3.1 10.0 (Critical)**. Consequences included emergency removal of affected packages from major Linux distributions, loss of trust in upstream maintainer takeover dynamics, and near-miss prevention of widespread compromised **OpenSSH** paths on affected distros. Official mitigation was to **stop using 5.6.0/5.6.1** and move to clean releases (distributors reissued **5.6.2** or reverted to **5.4.x** lines without the malicious build logic). **https://www.cisa.gov/news-events/alerts/2024/03/29/recommended-actions-mitigate-xz-utils-supply-chain-compromise**
+
+7. On **20 March 2023**, OpenAI reported a **ChatGPT** incident in which a bug in the **Redis** client path (after a server-side change) caused a small fraction of active chats to expose **other users’ conversation titles** and, for a narrow window, some **payment-related metadata** for **ChatGPT Plus** subscribers. OpenAI stated about **1.2%** of Plus users had title exposure during the bug window and that full chat content was not broadly leaked in the same way. Consequences included temporary service disablement, user notification, and reputational impact around privacy safeguards for generative AI products. The official fix was deployment of a corrected Redis usage pattern and validation, with affected functionality restored after patching and monitoring. **https://openai.com/index/march-20-chatgpt-outage**
+
+8. In **2023**, the **Mata v. Avianca** matter (U.S. District Court, Southern District of New York) became a landmark example when attorney **Steven A. Schwartz** submitted a brief citing **nonexistent ChatGPT-invented cases**, which opposing counsel and the court could not locate. On **22 June 2023**, Judge **Kevin Castel** issued a sanctions order finding bad faith and lack of verification, imposing penalties including **$5,000** fines and notification requirements to mis cited judges. Consequences included court sanctions, mandatory legal-education measures for involved lawyers, and global caution on unverified AI-generated legal research. The official judicial remedy was the court’s sanctions order and requirement to correct the record (not a software version fix). **https://www.nysd.uscourts.gov/sites/default/files/23cv1461_20230622_order.pdf**
+
+9. **CVE-2025-32711** (publicly associated with the **EchoLeak** class of issues in **Microsoft 365 Copilot** contexts) concerns a **zero-click** style data-exfiltration risk where Copilot could be induced—via crafted content such as malicious or attacker-controlled indexed material—to retrieve and leak sensitive tenant information without direct victim interaction. Microsoft published guidance and updates in **2025** after coordinated disclosure (reporting widely linked to security researchers including **Aim Security**’s EchoLeak work). **Microsoft** assigned and documented severity using its own MSRC scoring process (public writeups commonly cite a **Critical**-class impact profile; consult Microsoft’s advisory for the authoritative CVSS vector they published). Consequences included tenant data-exposure risk for organizations with Copilot enabled over broadly indexed content. The official fix was Microsoft’s **365/Copilot service-side remediation and security updates** released per Microsoft’s CVE/advisory timeline (apply Microsoft’s prescribed configuration mitigations plus documented patch/update cadence from the advisory). **https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-32711**
+
+10. **CVE-2024-5565** is a **prompt-injection** vulnerability in **Vanna.AI** (Python library for natural-language-to-SQL workflows) that could allow attackers to influence generated queries and downstream execution paths in vulnerable app integrations. **NVD** assigned **CVSS v3.1 9.8 (Critical)**. Consequences included potential unauthorized data access or code-path abuse in applications that exposed Vanna to untrusted user text without strict isolation and validation. The official fix was upgrading to patched Vanna releases published on **PyPI** (maintainers addressed the injection surface in post-advisory versions; users were directed to upgrade beyond affected lines per the project’s security advisory). **https://nvd.nist.gov/vuln/detail/CVE-2024-5565**
+```
+
+**Verification:**
+
+- D02: **INVALID – hallucination.** Claim: "widespread HTTP 500 errors". Fact: the Cloudflare post does not mention HTTP 500. It says users could not reach sites, site-local prefixes were withdrawn, and the internal load balancer stopped ([Cloudflare](https://blog.cloudflare.com/cloudflare-outage-on-june-21-2022/)).
+- D03: **INVALID – hallucination.** Claimed source `https://about.rogers.com/news-ideas/rogers-2022-service-interruption-report/` returns HTTP 404. The assessment is the [CRTC report](https://crtc.gc.ca/eng/publications/reports/xona2024.htm).
+- D07: **INVALID – hallucination.** Claim: "2017–2023 Model 3/Y". Fact: NHTSA 23V-085 lists Model Y as 2020–2023 ([NHTSA Part 573 report](https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V085-3451.PDF)).
+- D08: **INVALID – hallucination.** Claimed fixes "2020.1.11, 2021.0.7, 2022.0.7, 2022.1.8, and 2023.0.2". Fact: Progress fixed CVE-2023-34362 in 2021.0.6, 2021.1.4, 2022.0.4, 2022.1.5 and 2023.0.1 ([Progress](https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023)).
+- D10: **INVALID – hallucination.** Claimed fixes "3.0.7, 1.1.1s, and 1.0.2zg". Fact: the advisory says only 3.0.0–3.0.6 are affected, 1.1.1 and 1.0.2 are not, and the fix is 3.0.7 ([OpenSSL](https://www.openssl.org/news/secadv/20221101.txt)).
+- D11: **INVALID – hallucination.** Claimed source `.../recommended-actions-mitigate-xz-utils-supply-chain-compromise` returns HTTP 404. CISA's alert says downgrade to 5.4.6, not reissue 5.6.2 ([CISA](https://www.cisa.gov/news-events/alerts/2024/03/29/reported-supply-chain-compromise-affecting-xz-utils-data-compression-library-cve-2024-3094)).
+- D13: **INVALID – hallucination.** Claim: "1.2% of Plus users had title exposure". Fact: OpenAI says 1.2% is the share whose payment-related information may have been visible. Chat titles were a separate exposure ([OpenAI](https://openai.com/index/march-20-chatgpt-outage/)).
+- D14: **INVALID – hallucination.** Claimed source `https://www.nysd.uscourts.gov/sites/default/files/23cv1461_20230622_order.pdf` returns HTTP 404. The opinion is on [Justia](https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2022cv01461/575368/54/).
+- D19: **INVALID – hallucination.** Claim: customers should apply configuration mitigations and a patch. Fact: Microsoft deployed a server-side fix and required no customer action ([NVD](https://nvd.nist.gov/vuln/detail/CVE-2025-32711)).
+- D20: **INVALID – hallucination.** Claim: "NVD assigned CVSS v3.1 9.8" and the fix is a patched PyPI release. Fact: NVD has not scored this CVE; JFrog scored it 8.1 High; the documented mitigation is `visualize=False` ([NVD](https://nvd.nist.gov/vuln/detail/CVE-2024-5565)).
+
+**Conclusion after R2-B05:** each of the remaining 10 defects now has one confirmed error. All 20 defects have one.
 
 ## Requirement 3 – Physical product test cases
 
